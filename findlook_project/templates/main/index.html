@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Главная страница</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+        <style type="text/css">
+            input {
+                display: block;
+                font-size: 18px;
+                padding: 5px;
+                margin-bottom: 10px;
+                outline: none;
+                border: 1px solid #282828;
+                border-radius: 5px;
+                width: 100%;
+                background-color: #3500D3;
+                font-family: 'JetBrains Mono', monospace;
+                color: white;
+            }
+            form {
+                width: 90%;
+                min-width: 200px;
+                max-width: 300px;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #0e0e0e;
+                font-family: 'JetBrains Mono', monospace;
+                color: white;
+            }
+
+            .placeholder {
+                flex: 1;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="placeholder"></div>
+        <p id="creditals-hint">
+            Добро пожаловать в findlook.ru
+        </p>
+        <p>Сегодня {{ datetime }}</p>
+        
+        <div class="placeholder"></div>
+</html>    

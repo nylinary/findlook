@@ -24,3 +24,11 @@ class AccessRecord(models.Model):
 
     def __str__(self) -> str:
         return str(self.date)
+
+class UserSuggested(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    message = models.CharField(max_length=500, default='')
+
+    def __str__(self) -> str:
+        return self.email

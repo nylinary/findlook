@@ -1,106 +1,8 @@
-<html>
-    <head>
-        <title>Предложения</title>
-        <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
-        <style type="text/css">
-            input, textarea {
-                display: flex;
-                font-size: 18px;
-                padding: 5px;
-                margin-bottom: 10px;
-                outline: none;
-                border: 1px solid #282828;
-                border-radius: 5px;
-                background-color: #3500D3;
-                font-family: 'JetBrains Mono', monospace;
-                color: white;
-                width: 400px;
-                
-            }
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                background-color: #0e0e0e;
-                font-family: 'JetBrains Mono', monospace;
-                color: white;
-            }
-
-            .placeholder {
-                flex: 1;
-            }
-
-            textarea {
-                
-                max-width: 600px;
-                min-width: 100px;
-                max-height: 600px;
-                min-height: 100px;
-            }
-            ::placeholder {
-                color: white;
-            }
-
-            form {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                
-            }
-
-            .send-btn {
-                max-width: fit-content;         
-            }
-
-            .container {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-            }
-        </style>
-        <script type="text/javascript">
-            function createPItem(text) {
-                let p = document.createElement('p')
-                p.textContent = text;
-                return p
-            }
-            document.addEventListener("DOMContentLoaded", function(){
-                let btn = document.querySelector("input[type=submit]");
-                btn.addEventListener("click", async function(e){
-                    e.preventDefault();
-                    let response = await fetch("/suggestion", {
-                        method: "POST",
-                        body: new FormData(document.querySelector("form"))
-                    })
-                    let response_json = await response.json();
-                    let container = document.querySelector("div[class=container]");
-                    if (response_json.success){
-                        container.innerHTML='';
-                        container.appendChild(createPItem("Ваш отзыв отправлен!"));
-                        document.addEventListener("click", function(){
-                            window.open("/", "_self");
-                        })
-                    }
-                    else {
-                        let warning = document.querySelector("p[id=warning]");
-                        warning.style.color = "red";
-                        warning.textContent = "Некорректные данные!";
-                    }
-
-                })
-            })
-        </script>
-    </head>
-    <body>
-        <div class="placeholder"></div>
-        <div class="container">
+<!DOCTYPE html>
+{% extends 'main/base.html' %}
+  {% block body_block %}
+    {% load static %}
+        <script src="{% static 'js/suggestion.js' %}"></script>
             <p id="warning"></p>
             <p id="creditals-hint">
                 Что нужно исправить или добавить?
@@ -110,6 +12,4 @@
                 {% csrf_token %}
                 <input type="submit" class="send-btn" value="Отправить">
             </form>
-        </div>
-        <div class="placeholder"></div>
-</html>    
+  {% endblock %}

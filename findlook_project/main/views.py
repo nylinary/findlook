@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils import timezone
-from main.models import Topic, Webpage, AccessRecord
+from main.models import Topic, Webpage, AccessRecord, UserSuggested
 from . import forms
 import json
 # Create your views here.
@@ -26,6 +26,7 @@ def send_suggestion_page(request):
         form = forms.SuggestionForm(request.POST)
 
         if form.is_valid():
+            form.save()
             validation_dict['success'] = True
             return HttpResponse(json.dumps(validation_dict))
         else:

@@ -1,57 +1,14 @@
 <!DOCTYPE html>
-{% load static %}
-<html>
-    <head>
-        <title>Главная страница</title>
-        <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href=" {% static '/css/main.css' %}">
-        <style type="text/css">
-            input {
-                display: block;
-                font-size: 18px;
-                padding: 5px;
-                margin-bottom: 10px;
-                outline: none;
-                border: 1px solid #282828;
-                border-radius: 5px;
-                width: 100%;
-                background-color: #3500D3;
-                font-family: 'JetBrains Mono', monospace;
-                color: white;
-            }
-            form {
-                width: 90%;
-                min-width: 200px;
-                max-width: 300px;
-            }
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                background-color: #0e0e0e;
-                font-family: 'JetBrains Mono', monospace;
-                color: white;
-            }
-
-            .placeholder {
-                flex: 1;
-            }
-
-        </style>
-    </head>
-    <body>
+  {% extends "main/base.html" %}
+      {% block body_block %}
+      {% load static %}
         <div class="placeholder"></div>
         <p id="creditals-hint">
             Главная страница
         </p>
+        <!-- <a href="{% url 'index' %}">
+            <button id="to-main-btn">Go back</button>
+        </a> -->
         <p>Здесь будет все.</p>
         <div>
             <img src="{% static 'images/image.jpg' %}" alt="Here should be an image.">
@@ -66,7 +23,7 @@
                     <tbody>
                         {% for ar in access_records %}
                         <tr>
-                            <td>{{ ar.name }}</td>
+                            <td>{{ ar.name|cut:'Nelson' }}</td>
                             <td>{{ ar.date }}</td>
                         </tr>
                         {% endfor %}
@@ -74,7 +31,5 @@
                 </table>
             {% else %}
                 <p>NO ACCESS RECORDS FOUND</p>
-            {% endif %}
-        </div>   
-        <div class="placeholder"></div>
-</html>    
+            {% endif %}   
+      {% endblock %}

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Appearance */
+.top-nav-bar {
+	background-color: #3500D3;
+	background-image: linear-gradient(to bottom, #0003, transparent);
+	border-bottom: 1px solid #0003;
+	box-shadow: 0 0 32px #0003;
+	font-size: 1.3em;
+	font-weight: 100;
+}
+.top-nav-bar > a {
+	color: rgb(215, 219, 223);
+	padding: .75em;
+	text-align: center;
+	text-decoration: none;
+	transition: all .5s;
+}
+.top-nav-bar > a:hover {
+	background: #240090;
+	color: rgb(252, 252, 252);
+}
+.top-nav-bar > .line {
+	background: #faf9f9;
+	height: 1px;
+	pointer-events: none;
+}
+
+/* The Magic */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.top-nav-bar {
+	display: grid;
+	grid-template-columns: repeat(var(--items), 1fr);
+	position: relative;
+}
+.top-nav-bar > .line {
+	opacity: 0;
+	transition: all .5s;
+	position: absolute;
+	bottom: 0;
+	left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+	width: var(--width, calc(100% / var(--items)));
+	--index: 0;
+}
+.top-nav-bar > a:hover ~ .line {
+	opacity: 1;
+}
+
+.top-nav-bar > a:nth-of-type(1):hover ~ .line { --index: 1; }
+.top-nav-bar > a:nth-of-type(2):hover ~ .line { --index: 2; }
+.top-nav-bar > a:nth-of-type(3):hover ~ .line { --index: 3; }
+.top-nav-bar > a:nth-of-type(4):hover ~ .line { --index: 4; }
+.top-nav-bar > a:nth-of-type(5):hover ~ .line { --index: 5; }
+.top-nav-bar > a:nth-of-type(6):hover ~ .line { --index: 6; }
+.top-nav-bar > a:nth-of-type(7):hover ~ .line { --index: 7; }
+.top-nav-bar > a:nth-of-type(8):hover ~ .line { --index: 8; }
+.top-nav-bar > a:nth-of-type(9):hover ~ .line { --index: 9; }
+.top-nav-bar > a:nth-of-type(10):hover ~ .line { --index: 10; }
+.top-nav-bar > a:last-of-type:hover ~ .line { --index: var(--items); }

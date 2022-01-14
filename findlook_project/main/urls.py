@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.urls import path
 from django.urls.resolvers import URLPattern
 from main import views
@@ -8,4 +9,5 @@ app_name = 'main'
 
 urlpatterns = [
     path('', views.main_index, name='main'),
+    path('register/', views.register, name='register')
 ]

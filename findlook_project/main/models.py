@@ -1,5 +1,8 @@
+from distutils.command.upload import upload
+from hashlib import blake2b
 from django.db import models
 from django.db.models.deletion import CASCADE
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -32,3 +35,15 @@ class UserSuggested(models.Model):
 
     def __str__(self) -> str:
         return self.email
+
+
+class UserProfileInfo(models.Model):
+    """ Extend the basic user class to add new fields"""
+    user = models.OneToOneField(User, on_delete=CASCADE)
+
+    # additional fields
+    instagramm_link = models.URLField(blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
+
+    def __str__(self) -> str:
+        return self.user.username

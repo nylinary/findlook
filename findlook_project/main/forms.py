@@ -1,8 +1,10 @@
 from dataclasses import fields
 from email import message
+import imp
 from django import forms
 from django.core import validators
-from .models import UserSuggested
+from .models import UserSuggested, UserProfileInfo
+from django.contrib.auth.models import User
 
 def check_if_gmail(value):
     if value.split('@')[1] != 'gmail.com':
@@ -19,3 +21,21 @@ class SuggestionForm(forms.ModelForm):
     class Meta:
         model = UserSuggested
         fields = '__all__'
+
+
+class UserForm(forms.ModelForm):
+    """Registration form for user"""
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password')
+        help_texts = {
+            'username': None,
+        }
+
+class UserProfileInfoForm(forms.ModelForm):
+    """Registration form for user"""
+    class Meta:
+        model = UserProfileInfo
+        fields = ('instagramm_link', 'profile_pic')

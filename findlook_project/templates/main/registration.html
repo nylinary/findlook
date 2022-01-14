@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'main/base.html' %}
+  {% load static %}
+  {% block body_block %}
+  <script src="{% static 'js/registration.js' %}"></script>
+    <!-- {% if  registered %}
+        <p>Вы успешно прошли регистрацию.</p>
+    {% elif error %}
+      <p>Проверьте введенные данные..</p>
+    {% else %} -->
+        <p id="warning"></p>
+        <p>Регистрация</p>
+        <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <input class="send-btn " type="submit" value="Зарегистрироваться">  
+        </form>
+    <!-- {% endif %} -->
+  {% endblock %}

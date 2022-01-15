@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'main/base.html' %}
+{% block body_block %}
+{% load static %}
+    <p>Please Login</p>
+    <form action="{% url 'main:login' %}" method="POST">
+        {% csrf_token %}
+        {{ login_form.as_p }}
+        <input type="submit" class="send-btn" value="Отправить">
+    </form>
+{% endblock %}

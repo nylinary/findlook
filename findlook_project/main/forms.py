@@ -39,3 +39,8 @@ class UserProfileInfoForm(forms.ModelForm):
     class Meta:
         model = UserProfileInfo
         fields = ('instagramm_link', 'profile_pic')
+
+class UserLoginForm(forms.Form):
+    """Form for login page."""
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())

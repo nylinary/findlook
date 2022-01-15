@@ -1,15 +1,13 @@
-import profile
-import re
-from wsgiref import validate
-from xml.dom import ValidationErr
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
-from main.models import (Topic, Webpage, AccessRecord,
-                         UserSuggested)
-from .forms import (SuggestionForm, UserProfileInfoForm, UserForm)
+from main.models import AccessRecord
+from .forms import (SuggestionForm, UserLoginForm, UserProfileInfoForm, UserForm)
 import json
 from django.contrib.auth.password_validation import validate_password
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required 
+from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 
@@ -78,9 +76,43 @@ def register(request):
     else:
         user_form = UserForm()
         profile_form = UserProfileInfoForm()
-    # print(error)
-    # if error:
     return render(request, 'main/registration.html',
                   {'user_form': user_form,
                    'profile_form': profile_form,
                   })
+
+
+def user_login(request):
+
+    if request.POST:
+        login_form = UserLoginForm(data=request.POST)
+        if login_form.is_valid():
+
+            user = authenticate(username=login_form.cleaned_data['username'],
+                                password=login_form.cleaned_data['password'])
+
+            if user:
+                if user.is_active:
+                    login(request, user)
+                    return HttpResponseRedirect(reverse('index'))
+                
+                else:
+                    return HttpResponse("Not active.")
+            else:
+                print('User is not exist.')
+                return HttpResponse("Data is not correct!")
+        else:
+            return HttpResponse("Data is not valid")
+    else:
+        login_form = UserLoginForm()
+        return render(request, 'main/login.html', {'login_form': login_form})
+    
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def special(request):
+    return HttpResponse("You logged in.")

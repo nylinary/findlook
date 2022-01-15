@@ -1,6 +1,10 @@
 anyio==3.4.0
+argon2-cffi==21.3.0
+argon2-cffi-bindings==21.2.0
 asgiref==3.4.1
 astroid==2.8.4
+bcrypt==3.2.0
+cffi==1.15.0
 click==8.0.3
 Django==4.0.1
 fastapi==0.70.0
@@ -9,7 +13,9 @@ idna==3.3
 isort==5.10.1
 lazy-object-proxy==1.6.0
 mccabe==0.6.1
+Pillow==9.0.0
 platformdirs==2.4.0
+pycparser==2.21
 pydantic==1.8.2
 pylint==2.11.1
 python-dateutil==2.8.2

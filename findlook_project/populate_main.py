@@ -1,4 +1,5 @@
 import os
+from unicodedata import name
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','findlook_project.settings')
 
 import django
@@ -33,15 +34,16 @@ def populate(N=5):
         fake_name = fakegen.company()
 
         # Create the new webpage entry
-        webpg = Webpage.objects.get_or_create(topic = topic,
-                                              url=fake_url,
-                                              name=fake_name)[0]
-
+        # webpg = Webpage.objects.get_or_create(topic = topic,
+        #                                       url=fake_url,
+        #                                       name=fake_name)[0]
+        webpg_list = list(Webpage.objects.all())
+        webpg = random.choice(webpg_list)
         # Create a fake access record for that webpage.
-        acc_rec = AccessRecord.objects.get_or_create(name=webpg,
+        AccessRecord.objects.get_or_create(name=webpg,
                                                     date=fake_date)[0]
         
 if __name__ == '__main__':
     print('Populating sctipt...')
     populate(22)
-    print('Population complete.')
+    print('Population completed.')

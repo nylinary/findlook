@@ -148,3 +148,7 @@ html {
     margin: 0;
 }
 
+.webpage-link {
+    text-decoration: none;
+    color: white;
+}

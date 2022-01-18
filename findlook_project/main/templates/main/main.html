@@ -14,17 +14,17 @@
             <img src="{% static 'images/image.jpg' %}" alt="Here should be an image.">
         </div>
         <div class="wp-table">
-            {% if access_records %}
+            {% if webpages %}
                 <table>
                     <thead>
                         <th>Site Name</th>
-                        <th>Data Accessed</th>
+                        <th>Url</th>
                     </thead>
                     <tbody>
-                        {% for ar in access_records %}
+                        {% for webpage in webpages %}
                         <tr>
-                            <td>{{ ar.name|cut:'Nelson' }}</td>
-                            <td>{{ ar.date }}</td>
+                            <td><a class="webpage-link" href="{{ webpage.id }}">{{ webpage.name|cut:'Nelson' }}</a></td>
+                            <td>{{ webpage.url }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

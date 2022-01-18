@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block body_block %}
+<p>Detail View</p>
+<p>Webpage's topic is {{webpage_detail.topic}}</p>
+<p>Webpage's name is {{webpage_detail.name}}</p>
+<p>Accesses to this webpage:</p>
+{% for access in webpage_detail.access_records.all %}
+<p>This page was accessed in this time: {{ access.date }}</p>
+{% endfor %}
+{% endblock %}

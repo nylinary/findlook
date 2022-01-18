@@ -1,27 +1,39 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
-from main.models import AccessRecord
+from . import models
 from .forms import (SuggestionForm, UserLoginForm, UserProfileInfoForm, UserForm)
 import json
 from django.contrib.auth.password_validation import validate_password
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import authenticate, login, logout
+from django.views.generic import TemplateView, ListView, DetailView
 # Create your views here.
 
 
-def index(request):
+
+class IndexView(TemplateView):
+    template_name = 'main/index.html'
     now = timezone.localtime(timezone.now())
-    content = {'datetime': now}
-    return render(request, 'main/index.html', context=content) 
 
-def main_index(request):
-    webpages_list = AccessRecord.objects.order_by('date')
-    date_dict = {'access_records':webpages_list}
+    def get_context_data(self, **kwargs: any) -> dict[str, any]:
+        context = super().get_context_data(**kwargs)
+        context['datetime'] = self.now
+         
+        return context
 
-    return render(request, 'main/main.html', context=date_dict)
 
+class WebpageListView(ListView):
+    model = models.Webpage
+    context_object_name = 'webpages'
+    template_name = 'main/main.html'
+
+
+class WebpageDetailView(DetailView):
+    model = models.Webpage
+    template_name = 'main/detail.html'
+    context_object_name = 'webpage_detail'
 
 def send_suggestion_page(request):
     form = SuggestionForm()

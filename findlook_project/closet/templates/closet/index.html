@@ -1,0 +1,93 @@
+{% extends 'main/base.html' %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/closet.css' %}">
+
+<script>
+
+window.onload = function() {
+    var picList = [
+       '{% static "images/adidas/trousers/Bryuki_Adicolor_Nylon_bezhevyj_H06695_01_laydown_ccexpress.png" %}',
+       '{% static "images/adidas/trousers/Bryuki_Tiro_19_sinij_DT5174_01_laydown.jpg" %}',
+       '{% static "images/adidas/trousers/Bryuki_Tiro_21_chernyj_GH7306_01_laydown.jpg" %}',
+   ]
+   function ImageShowCase(list) {
+       var cur = 0;
+       var img = document.getElementById('leg-pics');
+       var update = function(index) {
+           img.src = list[index];
+       };
+       var next = function() {
+           cur = (cur < list.length - 1) ? (cur + 1) : 0;
+       };
+       var prev = function() {
+           cur = (cur === 0) ? (cur = list.length - 1) : 0;
+       };
+       
+       var bnext_leg = document.getElementById('bnext-leg');
+       var bprev_leg = document.getElementById('bprev-leg');
+
+       bnext_leg.addEventListener('click', function(e) {
+           e.stopPropagation;
+           next();
+           update(cur);
+       });
+
+       bprev_leg.addEventListener('click', function(e){
+           e.stopPropagation;
+           prev();
+           update(cur);
+       });
+   }
+   var topPicList = [
+        '{% static "/images/adidas/hoodies/Hudi_Graphics_Symbol_chernyj_H13448_01_laydown_ccexpress.png" %}',
+        '{% static "images/adidas/hoodies/Olimpijka_Adicolor_Classics_Primeblue_SST_krasnyj_HF2124_01_laydown.jpg" %}',
+        '{% static "images/adidas/hoodies/Hudi_R.Y.V._Loose_Fit_belyj_H11481_01_laydown.jpg" %}',
+    ]
+    function TopImageShowCase(list) {
+        var cur = 0;
+        var img = document.getElementById('top-pics');
+        var update = function(index) {
+            img.src = list[index];
+        };
+        var next = function() {
+            cur = (cur < list.length - 1) ? (cur + 1) : 0;
+        };
+        var prev = function() {
+            cur = (cur === 0) ? (cur = list.length - 1) : 0;
+        };
+        
+        var bnext_top = document.getElementById('bnext-top');
+        var bprev_top = document.getElementById('bprev-top');
+
+        bnext_top.addEventListener('click', function(e) {
+            e.stopPropagation;
+            next();
+            update(cur);
+        });
+
+        bprev_top.addEventListener('click', function(e){
+            e.stopPropagation;
+            prev();
+            update(cur);
+        });
+    }
+   TopImageShowCase(topPicList);
+   ImageShowCase(picList);
+};
+</script>
+<div class="body-clothes">
+<img src="{% static 'images/adidas/hoodies/Hudi_Graphics_Symbol_chernyj_H13448_01_laydown_ccexpress.png' %}" id="top-pics" class="body-clothes" alt="wtf man">
+</div>
+<div class="leg-clothes">
+<img src="{% static 'images/adidas/trousers/Bryuki_Adicolor_Nylon_bezhevyj_H06695_01_laydown_ccexpress.png' %}" id="leg-pics" class="leg-clothes" alt="">
+</div>
+<div class="buttons-top">
+    <button id="bnext-top" type="button">Next</input>
+    <button id="bprev-top" type="button">Previous</input> 
+</div>  
+<div class="buttons-leg">
+    <button id="bnext-leg" type="button">Next</input>
+    <button id="bprev-leg" type="button">Previous</input> 
+</div>  
+{% endblock %}

@@ -13,11 +13,12 @@
     </head>
     <body>
         <header class="header">
-            <nav class="top-nav-bar" style="--items: 5;">
+            <nav class="top-nav-bar" style="--items: 6;">
                 <a href="{% url 'index' %}">О нас</a>
                 <a href="{% url 'main:main' %}">Главная</a>
                 <a href="{% url 'suggestion' %}">Пожелания</a>
                 <a href="{% url 'main:register' %}">Регистрация</a>
+                <a href="{% url 'closet:index' %}">Примерочная</a>
                 {% if user.is_authenticated %}
                   <a href="{% url 'logout' %}">Выйти</a>
                 {% else %}

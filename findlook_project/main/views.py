@@ -8,7 +8,7 @@ from django.contrib.auth.password_validation import validate_password
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import authenticate, login, logout
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, View
 # Create your views here.
 
 
@@ -35,30 +35,45 @@ class WebpageDetailView(DetailView):
     template_name = 'main/detail.html'
     context_object_name = 'webpage_detail'
 
-def send_suggestion_page(request):
-    form = SuggestionForm()
-    validation_dict = {'success': None}
-    if request.POST:
-        form = SuggestionForm(request.POST)
 
+
+class SuggestionView(View):
+    suggestion_form = SuggestionForm
+    template_name = 'main/suggestion.html'
+    validation_dict = {'success': None}
+    
+    def get(self, request):
+        form = self.suggestion_form
+        return render(request, self.template_name,
+                      {'suggestion_form': form})
+
+    def post(self, request):
+        form = self.suggestion_form(request.POST)
         if form.is_valid():
             form.save()
-            validation_dict['success'] = True
-            return HttpResponse(json.dumps(validation_dict))
+            self.validation_dict['success'] = True
         else:
-            validation_dict['success'] = False
-            return HttpResponse(json.dumps(validation_dict))
-
-    return render(request, 'main/suggestion.html', {'form': form})
+            self.validation_dict['success'] = False
+        return HttpResponse(json.dumps(self.validation_dict))
 
 
-def register(request):
-    
-    error = False
+class RegistrationView(View):
+    template_name = 'main/registration.html'
+    user_form = UserForm
+    profile_form = UserProfileInfoForm
 
-    if request.POST:
-        user_form = UserForm(data=request.POST)
-        profile_form = UserProfileInfoForm(data=request.POST)
+    def get(self, request):
+
+        context = {
+            'user_form': self.user_form,
+            'profile_form': self.profile_form,    
+        }
+        return render(request, self.template_name, context=context)
+
+    def post(self, request):
+        ERROR = False
+        user_form = self.user_form(data=request.POST)
+        profile_form = self.profile_form(data=request.POST, files=request.FILES)
 
         if user_form.is_valid() and profile_form.is_valid():
             # Get clean form data.
@@ -69,62 +84,43 @@ def register(request):
                 user.set_password(user.password)
                 # Save that hash.
                 user.save() 
-
                 profile = profile_form.save(commit=False)
                 profile.user = user
-
-                # Key 'profile_pic' defined in the models.
-                if 'profile_pic' in request.FILES:
-                    profile.profile_pic = request.FILES['profile_pic']
-                
                 profile.save()
-                registered = True
             except Exception as e:
-                error = True
+                ERROR = True
         else:
             print(user_form.errors, profile_form.errors)
-            error = True
-        return HttpResponse(json.dumps({'error': error}))
-    else:
-        user_form = UserForm()
-        profile_form = UserProfileInfoForm()
-    return render(request, 'main/registration.html',
-                  {'user_form': user_form,
-                   'profile_form': profile_form,
-                  })
+            ERROR = True
+        return HttpResponse(json.dumps({'error': ERROR}))
 
 
-def user_login(request):
 
-    if request.POST:
-        login_form = UserLoginForm(data=request.POST)
+class UserLoginView(View):
+    login_form = UserLoginForm
+    template_name = 'main/login.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {'login_form': self.login_form})
+    
+    def post(self, request):
+        login_form = self.login_form(request.POST)
         if login_form.is_valid():
-
             user = authenticate(username=login_form.cleaned_data['username'],
                                 password=login_form.cleaned_data['password'])
-
             if user:
                 if user.is_active:
                     login(request, user)
                     return HttpResponseRedirect(reverse('index'))
-                
                 else:
-                    return HttpResponse("Not active.")
+                    return HttpResponse('not active user')
             else:
-                print('User is not exist.')
-                return HttpResponse("Data is not correct!")
+                return HttpResponse('Data is not correct')
         else:
-            return HttpResponse("Data is not valid")
-    else:
-        login_form = UserLoginForm()
-        return render(request, 'main/login.html', {'login_form': login_form})
-    
+            return HttpResponse('Data is not valid')
+
 
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
-
-@login_required
-def special(request):
-    return HttpResponse("You logged in.")

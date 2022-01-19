@@ -24,9 +24,9 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('main/', include('main.urls')),
     path('admin/', admin.site.urls),
-    path('suggestion', views.send_suggestion_page, name='suggestion'),
+    path('suggestion', views.SuggestionView.as_view(), name='suggestion'),
     path('logout', views.user_logout, name='logout'),
-    path('special', views.special, name='special'),
+    path('closet/', include('closet.urls')),
     
 ]
 urlpatterns += staticfiles_urlpatterns()

@@ -8,7 +8,7 @@
                 Что нужно исправить или добавить?
             </p>
             <form method="POST">
-                {{form.as_p}}
+                {{suggestion_form.as_p}}
                 {% csrf_token %}
                 <input type="submit" class="send-btn" value="Отправить">
             </form>

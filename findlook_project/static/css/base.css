@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
 
 body {
+	/* background-color: #CAFAFE; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,4 +40,11 @@ body {
 	display: grid;
 	grid-template-columns: repeat(var(--items), 1fr);
 	position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
 }

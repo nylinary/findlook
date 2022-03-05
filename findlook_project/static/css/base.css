@@ -1,50 +1,242 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
 
+/* General styles. */
 body {
-	/* background-color: #CAFAFE; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	font-family: 'JetBrains Mono', monospace;
+	background-color: #ebeeef;
 }
 
-/* Appearance */
-.top-nav-bar {
-	background-color: #3500D3;
-	background-image: linear-gradient(to bottom, #0003, transparent);
-	border-bottom: 1px solid #0003;
-	box-shadow: 0 0 32px #0003;
+ol, ul {
+	padding: 0;
+	margin: 0;
+}
+
+/* -------------------------------- */
+
+/* Style for main-content div below the header. */
+.main-content {
+	margin-top: 135px;
+}
+
+/* -------------------------------- */
+
+/* Header */
+nav.navbar {
+	background-color: black;
 	font-size: 1.3em;
-	font-weight: 100;
+	font-weight: 600;
+	padding: 0;
 }
-.top-nav-bar > a {
-	color: rgb(215, 219, 223);
-	padding: .65em;
+
+/* -------------------------------- */
+
+/* Logo styles. */
+div.logo {
+	display: flex;
+	flex: 1;
+	height: 135px;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 1em 0;
+}
+
+img.logo {
+	max-height: 115px;
+	padding: 7px 0 7px;
+}
+
+/* -------------------------------- */
+
+/* Styles for hamburger button. */
+button.navbar-toggler {
+	height: 50px;
+	width: 50px;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+button.navbar-toggler:hover {
+	background-color: #505050;
+}
+
+img.hamburger-icon {
+	max-height: 50px;
+}
+
+/* -------------------------------- */
+
+/* Styles for close button in side menu. */
+.btn-close:hover{
+	background-color: transparent;
+	color: #000000;
+	box-shadow: none;
+}
+
+/* Rule to make div with nav-items take 90% of 
+   free space while of navbar on big screens.
+   Logo takes the rest 10%.
+*/
+div.offcanvas-end {
+	flex: 90%;
+}
+
+/* -------------------------------- */
+
+/* Styles for header and body of side menu. */
+.offcanvas-header {
+	background-color: #E3C8FD;
+	color: black;
+}
+
+.offcanvas-body{
+	background-color: black;
+}
+
+.offcanvas-body {
+	padding: 0;
+}
+
+/* -------------------------------- */
+
+/* List with nav items. */
+ul.navbar-nav {
+	background-color: #000000;
+}
+
+/* -------------------------------- */
+
+/* Styles for nav-items. */
+.nav-item {
+	background-color: #E3C8FD;
+}
+
+.nav-item:hover {
+	background-color: #80F6C1;
+}
+
+/* -------------------------------- */
+
+/* Styles for nav-links. */
+.nav-link, .nav-link:hover, .nav-link:focus, .nav-link:active {
+	color: black;
+}
+
+/* -------------------------------- */
+
+/* Footer */
+footer.footer {
+	z-index: 1029 !important;
+	height: fit-content;
+}
+
+footer>div.footer {
+	background-color: #000000;
+	padding: 1em 0 1em;
+}
+
+div.footer.links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div.footer-logo {
 	text-align: center;
+	margin: auto;
+}
+
+img.icons {
+	width: 40px;
+}
+
+p.icons {
+	display: inline;
+	color: white;
+}
+
+ul.footer.links {
+	list-style-type: none;
+}
+
+a.footer {
 	text-decoration: none;
-	transition: all .5s;
-}
-.top-nav-bar > a:hover {
-	background: #240090;
-	color: rgb(252, 252, 252);
+	color: white;
 }
 
-/* The Magic */
-.header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-.top-nav-bar {
-	display: grid;
-	grid-template-columns: repeat(var(--items), 1fr);
-	position: relative;
+a.footer:hover {
+	color: #80F6C1;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
+p.copyright{
+	font-size: 0.75em;
+	color: white;
+	text-align: center;
+	margin: 0.5rem 0 0.5rem;
+}
+
+/* Styles for page when it's > lg size */
+@media (max-width: 991.98px) {
+	.nav-item {
+		background-color: #000000 ;
+		color: white;
+	}
+
+	.nav-link, .nav-link:focus, .nav-link:active {
+		color: white !important;
+	}
+
+	.nav-link:hover {
+		color: #000000 !important;
+	}
+	.nav-item {
+		padding: 0 1rem 0;
+	}
+}
+
+/* Styles for extra small displays */
+@media (max-width: 575.98px) {
+
+	/* Header styles */
+	nav.navbar {
+		height: 100px;
+	}
+
+/* -------------------------------- */
+
+	/* Logo styles. */
+	div.logo {
+		display: flex;
+		flex: 1;
+		height: fit-content;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 0;
+	}
+
+	img.logo {
+		max-height: 75px;
+	}	
+
+/* -------------------------------- */	
+
+	/* Footer styles */
+	footer.footer {
+		font-size: 0.75rem;
+	}
+
+	div.footer {
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	div.row>div.footer {
+		padding: 1em 0 1em;
+	}
+
+	img.icons {
+		width: 2em;
+	}
 }

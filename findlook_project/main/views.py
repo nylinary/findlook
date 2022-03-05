@@ -13,16 +13,22 @@ from django.views.generic import TemplateView, ListView, DetailView, View
 
 
 
-class IndexView(TemplateView):
-    template_name = 'main/index.html'
-    now = timezone.localtime(timezone.now())
+# class IndexView(TemplateView):
+#     template_name = 'main/index.html'
+#     now = timezone.localtime(timezone.now())
 
+#     def get_context_data(self, **kwargs: any) -> dict[str, any]:
+#         context = super().get_context_data(**kwargs)
+#         context['datetime'] = self.now
+         
+#         return context
+
+class IndexView(TemplateView):
+    template_name = 'main/about.html'
     def get_context_data(self, **kwargs: any) -> dict[str, any]:
         context = super().get_context_data(**kwargs)
-        context['datetime'] = self.now
-         
+        # Edit context if needed.
         return context
-
 
 class WebpageListView(ListView):
     model = models.Webpage

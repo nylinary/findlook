@@ -12,19 +12,15 @@
     top: 370px;
     top: 100px;
     margin: auto;
-    z-index: 1;
+    z-index: 2;
 }
 
 .leg-clothes {
     z-index: 1;
+    overflow: hidden;
 }
 
-body {
-    background-color: #ebeeef;
-
-}
-
-img {
+img.leg-clothes, img.body-clothes {
     width: 40%;
 }
 

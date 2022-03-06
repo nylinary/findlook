@@ -197,7 +197,7 @@ p.copyright{
 
 /* ------------------------------- */
 
-/* Styles for page when it's > lg size */
+/* Styles for page when it's < lg size */
 @media (max-width: 991.98px) {
 
 	.nav-item {
@@ -213,7 +213,10 @@ p.copyright{
 		color: #000000 !important;
 	}
 	.nav-item {
-		padding: 0 1rem 0;
+		/* padding: 0 1rem 0; */
+	}
+	.nav-link {
+        padding: 0.5rem 1rem!important;
 	}
 }
 

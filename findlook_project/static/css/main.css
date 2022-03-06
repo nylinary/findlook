@@ -1,5 +1,5 @@
 
-
+/* 
 .container {
     display: flex;
     justify-content: center;
@@ -157,4 +157,38 @@ html {
 .webpage-link {
     text-decoration: none;
     color: white;
+} */
+
+/* ------------------------------------- */
+
+/* General styles */
+
+div.content {   /* Centering rows in container */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.1rem;
+}
+
+/* -------------------------------------- */
+
+/* Image styles */
+div.landing-images {
+    text-align: center;
+    padding: 1em 0 1em;
+}
+
+
+img.landing-images {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --------------------------------------- */
+
+/* Text styles */
+.main-text {
+    height: min-content;
 }

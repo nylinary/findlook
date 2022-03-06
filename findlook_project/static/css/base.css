@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
 
 /* General styles. */
+html, body {
+	height: 100%;
+}
+
 body {
 	font-family: 'JetBrains Mono', monospace;
 	background-color: #ebeeef;
+	display: flex;
+	flex-direction: column;
 }
 
 ol, ul {
@@ -15,7 +21,7 @@ ol, ul {
 
 /* Style for main-content div below the header. */
 .main-content {
-	margin-top: 135px;
+	flex: 1 0 auto;
 }
 
 /* -------------------------------- */
@@ -23,7 +29,7 @@ ol, ul {
 /* Header */
 nav.navbar {
 	background-color: black;
-	font-size: 1.3em;
+	font-size: 1.25rem;
 	font-weight: 600;
 	padding: 0;
 }
@@ -124,12 +130,14 @@ ul.navbar-nav {
 	color: black;
 }
 
+
 /* -------------------------------- */
 
 /* Footer */
 footer.footer {
 	z-index: 1029 !important;
 	height: fit-content;
+	flex-shrink: 0;
 }
 
 footer>div.footer {
@@ -177,8 +185,21 @@ p.copyright{
 	margin: 0.5rem 0 0.5rem;
 }
 
+/* ------------------------------- */
+
+/* Styles when moving from medium to large screen */
+
+@media (min-width: 992.01px) {
+	.nav-link {
+		padding: 0.5em 0.675em !important;
+	}
+}
+
+/* ------------------------------- */
+
 /* Styles for page when it's > lg size */
 @media (max-width: 991.98px) {
+
 	.nav-item {
 		background-color: #000000 ;
 		color: white;
@@ -199,6 +220,12 @@ p.copyright{
 /* Styles for extra small displays */
 @media (max-width: 575.98px) {
 
+	/* Main styles */
+	div.main-content {
+		font-size: 0.75rem;
+	}
+	/* ------------------------------ */
+	
 	/* Header styles */
 	nav.navbar {
 		height: 100px;

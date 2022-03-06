@@ -24,7 +24,7 @@ from django.views.generic import TemplateView, ListView, DetailView, View
 #         return context
 
 class IndexView(TemplateView):
-    template_name = 'main/about.html'
+    template_name = 'main/main.html'
     def get_context_data(self, **kwargs: any) -> dict[str, any]:
         context = super().get_context_data(**kwargs)
         # Edit context if needed.

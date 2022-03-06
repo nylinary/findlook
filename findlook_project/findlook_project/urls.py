@@ -15,17 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main import views
+from main import views as main_views
 from django.conf.urls import include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    path('', main_views.IndexView.as_view(), name='index'),
     path('main/', include('main.urls')),
     path('admin/', admin.site.urls),
-    path('suggestion', views.SuggestionView.as_view(), name='suggestion'),
-    path('logout', views.user_logout, name='logout'),
+    path('suggestion', main_views.SuggestionView.as_view(), name='suggestion'),
+    path('logout', main_views.user_logout, name='logout'),
     path('closet/', include('closet.urls')),
     
 ]

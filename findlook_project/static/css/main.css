@@ -161,20 +161,20 @@ html {
 
 /* ------------------------------------- */
 
-/* General styles */
+/* || General styles */
 
-div.content {   /* Centering rows in container */
+.content {   /* Centering rows in container */
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    font-size: 1.1rem;
+    font-size: 1.175rem;
 }
 
 /* -------------------------------------- */
 
-/* Image styles */
+/* || Image styles */
 div.landing-images {
     text-align: center;
     padding: 1em 0 1em;
@@ -188,7 +188,14 @@ img.landing-images {
 
 /* --------------------------------------- */
 
-/* Text styles */
+/* || Text styles */
 .main-text {
     height: min-content;
+}
+
+@media (max-width: 575.98px) { 
+/* Bootstrap xs < 576px but max-width is <= 576, so i needed to use 575.98 for simultanious changes*/
+    .content {
+        font-size: 0.85rem;
+    }
 }

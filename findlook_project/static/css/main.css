@@ -172,6 +172,10 @@ html {
     font-size: 1.175rem;
 }
 
+#main-header {
+    margin-bottom: 1em;
+}
+
 /* -------------------------------------- */
 
 /* || Image styles */
@@ -189,13 +193,104 @@ img.landing-images {
 /* --------------------------------------- */
 
 /* || Text styles */
-.main-text {
+.main-block {
     height: min-content;
 }
 
+/* --------------------------------------- */
+
+/* Button styles */
+
+form.start {
+    width: min-content;
+    margin: auto;
+}
+
+input.start {
+    background-color: #80F6C1;
+    border: none;
+    padding: 0.25rem 0.75rem;
+}
+
+input.start:hover {
+    background-color: #E3C8FD;
+}
+
+/* ------------------------------------------ */
+
 @media (max-width: 575.98px) { 
 /* Bootstrap xs < 576px but max-width is <= 576, so i needed to use 575.98 for simultanious changes*/
+/* General styles */
     .content {
         font-size: 0.85rem;
+    }
+
+/* ------------------------------------------ */
+
+/* Main block styles */
+
+    form.start {
+        margin-bottom: 1em;
+    }
+
+    #main-header {
+        margin-bottom: 0.5em;
+    }
+
+/* ------------------------------------------ */
+}
+
+@media (min-width: 576px) {
+
+/* Main block styles */
+
+    .main-block {
+        padding-right: 5%;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+/* Main block styles */
+
+    .main-block {
+        padding-right: 10%;
+    }
+}
+
+@media (min-width: 992px) {
+
+/* Main block styles */
+
+    .main-block {
+        padding-right: 15%;
+    }
+}
+
+@media (min-width: 1200px) {
+
+/* Main block styles */
+
+    .main-block {
+        padding-right: 20%;
+    }
+}
+
+@media (min-width: 1400px) {
+
+/* Main block styles */
+
+    .main-block {
+        padding-right: 25%;
+    }
+}
+
+@media (min-width: 1600px) {
+
+/* Main block styles */
+
+    .main-block {
+        padding-right: 30%;
     }
 }

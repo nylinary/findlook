@@ -11,11 +11,14 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-8 d-flex align-items-center">
-                  <div class="main-text">
-                    <h1>Найди свой образ!</h1>
+                  <div class="main-block">
+                    <h1 class="centered-headers" id="main-header">Найди свой образ!</h1>
                     <p>
                         Этот сервис был создан для удобного подбора образа не выходя из дома. С его помощью вы можете выбирать вещи из разных магазинов и категорий, и смотреть, как они будут смотреться вместе.
                     </p>
+                    <form class="start" method="get" action="{% url 'closet:index' %}">
+                        <input class="start" type="submit" value="Начать" />
+                    </form>
                 </div>
               </div>
           </div>

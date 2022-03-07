@@ -17,6 +17,10 @@ ol, ul {
 	margin: 0;
 }
 
+.centered-headers {
+	text-align: center;
+}
+
 /* -------------------------------- */
 
 /* Style for main-content div below the header. */
@@ -212,9 +216,7 @@ p.copyright{
 	.nav-link:hover {
 		color: #000000 !important;
 	}
-	.nav-item {
-		/* padding: 0 1rem 0; */
-	}
+
 	.nav-link {
         padding: 0.5rem 1rem!important;
 	}

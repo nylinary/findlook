@@ -1,8 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
 
+/* Utility Styles */
+
+.pd-2 {
+	padding: 2em!important;
+}
+
+/* ---------------------- */
+
 /* General styles. */
 html, body {
 	height: 100%;
+}
+
+.Wrapper {
+	height: 100%;
+	width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around; */
+    font-size: 1.5rem; 
 }
 
 body {
@@ -17,6 +35,10 @@ ol, ul {
 	margin: 0;
 }
 
+h1 {
+	padding-bottom: 1em;
+}
+
 .centered-headers {
 	text-align: center;
 }
@@ -27,6 +49,7 @@ ol, ul {
 .main-content {
 	flex: 1 0 auto;
 }
+
 
 /* -------------------------------- */
 

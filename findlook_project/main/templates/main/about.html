@@ -1,5 +1,61 @@
 {% extends 'main/base.html' %}
-
 {% block body_block %}
-psda
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+<div class="Wrapper">
+    <div class="row gx-0 ab-Wrapper_Pink pd-2">
+        <div class="col-xs-12 col-sm-4">
+            <div class="ab-ImageDiv">
+                <img class="ab-Image" src="{% static 'images/about_images/About1.jpg' %}" alt="">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 d-flex align-items-center">
+            <div class="ab-Text-1">
+                <h1>Шаг 1 - Перейди в Образы</h1>
+                <p>
+                    На этой странице находится главный функционал. 
+                    Здесь ты можешь подобрать любую одежду всех доступных брендов на свой вкус.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row ab-Wrapper_Yellow-1 gx-0 pd-2">
+            <div class="col-xs-12 col-sm-8 d-flex align-items-center">
+                <div class="ab-Text-2">
+                    <h1>Шаг 2 - Управление  </h1>
+                    <p>
+                        Используй стрелки в отделе одежды чтобы менять предметы гардероба в нем.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="ab-ImageDiv">
+                    <img class="ab-Image" src="{% static 'images/about_images/About2.jpg' %}" alt="">
+                </div>
+            </div>
+    </div>
+    <div class="row gx-0 pd-2 ab-Wrapper_Yellow-2">
+        <div class="col-xs-12 col-sm-4">
+            <div class="ab-ImageDiv">
+                <img class="ab-Image" src="{% static 'images/about_images/About3.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="row gx-0 ab-Wrapper_White pd-2">
+        <div class="col-xs-12 col-sm-4">
+            <div class="ab-ImageDiv">
+                <img class="ab-Image" src="{% static 'images/about_images/About5.jpg' %}" alt="">
+            </div>           
+        </div>
+        <div class="col-xs-12 col-sm-8 d-flex align-items-center">
+            <div class="ab-Text-3">
+                <h1>Шаг 3 - Создавай свои образы!</h1>
+                <p>
+                    Находи новые сочетания, стили и образы. Делись ими в соц. сетях или используй перед
+                     походами по магазинам. Вперёд!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

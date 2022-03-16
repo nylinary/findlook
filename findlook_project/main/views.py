@@ -30,6 +30,12 @@ class IndexView(TemplateView):
         # Edit context if needed.
         return context
 
+class AboutView(TemplateView):
+    template_name = 'main/about.html'
+    def get_context_data(self, **kwargs: any) -> dict[str, any]:
+        return super().get_context_data(**kwargs)
+        
+
 class WebpageListView(ListView):
     model = models.Webpage
     context_object_name = 'webpages'

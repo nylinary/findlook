@@ -1,0 +1,118 @@
+/* Wrapper styles */
+
+.ab-Wrapper_Pink {
+    background-color: #E3C8FD;
+}
+
+.ab-Wrapper_Yellow-1, .ab-Wrapper_Yellow-2,.ab-Wrapper_Yellow-3 {
+    background-color: #FFFCC0;
+}
+
+.ab-Wrapper_White {
+    background-color: #FFFFFF;
+}
+
+/* ---------------------------------- */
+
+/* Image styles */
+.ab-ImageDiv {
+    text-align: center;
+    padding: 1em 0 1em;
+}
+
+.ab-Image {
+    width: 275px;
+    max-width: 100%;
+    height: auto;
+}
+/* ---------------------------------------- */
+
+/* Text styles */
+.ab-Text-1, .ab-Text-2, .ab-Text-3 {
+    height: min-content;
+}
+
+/* ---------------------------------------- */
+
+/* When small make picture go before text in partucular cases */
+@media (max-width: 575.98px) {
+
+    .ab-Wrapper_Yellow-1 {
+        flex-direction: column-reverse;
+    }
+    
+    .Wrapper {
+        font-size: 1.1rem!important;
+    }
+}
+/* ----------------------------------------------- */
+
+/* Responsive styles */
+@media (min-width: 576px) {
+
+    /* Main block styles */
+    
+        .ab-Text-1 {
+            padding-right: 5%;
+        }
+    
+    }
+    
+@media (min-width: 768px) {
+
+/* Main block styles */
+
+    .ab-Text-1 {
+        padding-right: 10%;
+    }
+
+    .ab-Text-2 {
+        padding-left: 5%;
+    }
+}
+
+@media (min-width: 992px) {
+
+/* Main block styles */
+
+    .ab-Text-1 {
+        padding-right: 15%;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+/* Main block styles */
+
+    .ab-Text-1 {
+        padding-right: 20%;
+    }
+
+    .ab-Text-2 {
+        padding-left: 10%;
+    }
+}
+
+@media (min-width: 1400px) {
+
+/* Main block styles */
+
+    .ab-Text-1 {
+        padding-right: 25%;
+    }
+
+}
+
+@media (min-width: 1600px) {
+
+/* Main block styles */
+
+    .ab-Text-1 {
+        padding-right: 30%;
+    }
+
+    .ab-Text-2 {
+        padding-left: 15%;
+    }
+}

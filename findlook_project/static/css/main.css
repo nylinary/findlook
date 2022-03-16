@@ -1,166 +1,3 @@
-
-/* 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-}
-input, button {
-    display: block;
-    font-size: 18px;
-    padding: 5px;
-    margin-bottom: 10px;
-    outline: none;
-    border: 1px solid #282828;
-    border-radius: 5px;
-    width: 100%;
-    background-color: black;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: bold;
-    color: white;
-}
-
-button:hover {
-    background-color: #80F6C1;
-    color: black;
-}
-
-form {
-    width: 90%;
-    min-width: 200px;
-    max-width: 300px;
-}
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #0e0e0e;
-    font-family: 'JetBrains Mono', monospace;
-    color: white;
-}
-
-.placeholder {
-    flex: 1;
-}
-
-a {
-    text-decoration: none;
-}
-
-#to-main-btn {
-    width: 175px;
-    margin-top: 50px;
-}
-input {
-    display: block;
-    font-size: 18px;
-    padding: 5px;
-    margin-bottom: 10px;
-    outline: none;
-    border: 1px solid #282828;
-    border-radius: 5px;
-    width: 100%;
-    background-color: #80F6C1;
-    font-family: 'JetBrains Mono', monospace;
-    color: black;
-}
-form {
-    width: 90%;
-    min-width: 200px;
-    max-width: 300px;
-}
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #0e0e0e;
-    font-family: 'JetBrains Mono', monospace;
-    color: white;
-}
-
-.placeholder {
-    flex: 1;
-}
-input, textarea {
-    display: flex;
-    font-size: 18px;
-    padding: 5px;
-    margin-bottom: 10px;
-    outline: none;
-    border: 1px solid #282828;
-    border-radius: 5px;
-    background-color: #fffcc0;
-    font-family: 'JetBrains Mono', monospace;
-    color: black;
-    width: 400px;
-    
-}
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: #EFEFEF;
-    font-family: 'JetBrains Mono', monospace;
-    color: white;
-}
-
-.placeholder {
-    flex: 1;
-}
-
-textarea {
-    
-    max-width: 600px;
-    min-width: 100px;
-    max-height: 600px;
-    min-height: 100px;
-}
-::placeholder {
-    color: white;
-}
-
-form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-}
-
-.send-btn {
-    max-width: fit-content;         
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-html {
-    height: 100%;
-    margin: 0;
-}
-
-.webpage-link {
-    text-decoration: none;
-    color: white;
-} */
-
-/* ------------------------------------- */
-
 /* || General styles */
 
 .content {   /* Centering rows in container */
@@ -169,7 +6,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    font-size: 1.175rem;
+    font-size: 1.5rem;
 }
 
 #main-header {
@@ -220,14 +57,14 @@ input.start:hover {
 
 @media (max-width: 575.98px) { 
 /* Bootstrap xs < 576px but max-width is <= 576, so i needed to use 575.98 for simultanious changes*/
-/* General styles */
+    /* General styles */
     .content {
-        font-size: 0.85rem;
+        font-size: 1.1rem;
     }
 
-/* ------------------------------------------ */
+    /* ------------------------------------------ */
 
-/* Main block styles */
+    /* Main block styles */
 
     form.start {
         margin-bottom: 1em;
@@ -237,7 +74,7 @@ input.start:hover {
         margin-bottom: 0.5em;
     }
 
-/* ------------------------------------------ */
+    /* ------------------------------------------ */
 }
 
 @media (min-width: 576px) {

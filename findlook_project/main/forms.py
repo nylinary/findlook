@@ -44,3 +44,4 @@ class UserLoginForm(forms.Form):
     """Form for login page."""
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
+    

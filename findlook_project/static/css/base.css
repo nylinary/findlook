@@ -5,12 +5,30 @@
 .pd-2 {
 	padding: 2em!important;
 }
+ .mt-2 {
+	 margin-top: 2em!important;
+ }
 
 /* ---------------------- */
+
 
 /* General styles. */
 html, body {
 	height: 100%;
+}
+
+
+.bs-Wrapper
+ {
+	padding: 0!important;
+	height: 100%;
+	/* overflow-x: hidden; */
+	display: flex;
+	flex-direction: column;
+}
+.row {
+	width: 100%;
+	margin: 0;
 }
 
 .Wrapper {
@@ -20,14 +38,12 @@ html, body {
     flex-direction: column;
     align-items: stretch;
     justify-content: space-around; */
-    font-size: 1.5rem; 
+    font-size: 1.8rem; 
 }
 
 body {
 	font-family: 'JetBrains Mono', monospace;
 	background-color: #ebeeef;
-	display: flex;
-	flex-direction: column;
 }
 
 ol, ul {

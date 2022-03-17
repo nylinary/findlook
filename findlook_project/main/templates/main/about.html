@@ -3,26 +3,26 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
 <div class="Wrapper">
-    <div class="row gx-0 ab-Wrapper_Pink pd-2">
+    <div class="row ab-Wrapper_Pink pd-2">
         <div class="col-xs-12 col-sm-4">
             <div class="ab-ImageDiv">
                 <img class="ab-Image" src="{% static 'images/about_images/About1.jpg' %}" alt="">
             </div>
         </div>
         <div class="col-xs-12 col-sm-8 d-flex align-items-center">
-            <div class="ab-Text-1">
-                <h1>Шаг 1 - Перейди в Образы</h1>
+            <div class="ab-Text-pdr">
+            <h1>Шаг 1 - Перейди в <a class="ab-Link" href="{% url 'closet:index' %}">Образы</a></h1>
                 <p>
                     На этой странице находится главный функционал. 
-                    Здесь ты можешь подобрать любую одежду всех доступных брендов на свой вкус.
+                    Там ты можешь подобрать любую одежду всех доступных брендов на свой вкус.
                 </p>
             </div>
         </div>
     </div>
-    <div class="row ab-Wrapper_Yellow-1 gx-0 pd-2">
+    <div class="row ab-Wrapper_Yellow-1">
             <div class="col-xs-12 col-sm-8 d-flex align-items-center">
-                <div class="ab-Text-2">
-                    <h1>Шаг 2 - Управление  </h1>
+                <div class="ab-Text-pdl">
+                    <h1>Шаг 2 - Упра<wbr>вление</h1>
                     <p>
                         Используй стрелки в отделе одежды чтобы менять предметы гардероба в нем.
                     </p>
@@ -34,27 +34,62 @@
                 </div>
             </div>
     </div>
-    <div class="row gx-0 pd-2 ab-Wrapper_Yellow-2">
+    <div class="row ab-Wrapper_Yellow-2">
         <div class="col-xs-12 col-sm-4">
             <div class="ab-ImageDiv">
                 <img class="ab-Image" src="{% static 'images/about_images/About3.jpg' %}" alt="">
             </div>
         </div>
+        <div class="col-xs-12 col-sm-8 d-flex align-items-center">
+            <div class="ab-Text-pdr">
+                <p> Ты можешь настроить фильтры по бренду и цвету для каждого из отделов.</p>
+            </div>
+        </div>
     </div>
-    <div class="row gx-0 ab-Wrapper_White pd-2">
+    <div class="row ab-Wrapper_Yellow-3">
+        <div class="col-xs-12 col-sm-8 d-flex align-items-center">
+            <div class="ab-Text-pdl">
+                <p>
+                    Cохраняй пригля<wbr>нувшийся тебе образ на свой аккаунт либо скачай на компьютер.
+                    Ты также можешь сохрянять отдельные предметы одежды.
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="ab-ImageDiv">
+                <img class="ab-Image" src="{% static 'images/about_images/About4.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="row ab-Wrapper_Yellow-4">
         <div class="col-xs-12 col-sm-4">
             <div class="ab-ImageDiv">
                 <img class="ab-Image" src="{% static 'images/about_images/About5.jpg' %}" alt="">
-            </div>           
+            </div>
         </div>
         <div class="col-xs-12 col-sm-8 d-flex align-items-center">
-            <div class="ab-Text-3">
+            <div class="ab-Text-pdr">
+                <p>Чтобы развернуть меню, используй эту кнопку.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row ab-Wrapper_White pd-2">
+        <div class="col-xs-12 col-sm-8 d-flex align-items-center">
+            <div class="ab-Text-pdl">
                 <h1>Шаг 3 - Создавай свои образы!</h1>
                 <p>
                     Находи новые сочетания, стили и образы. Делись ими в соц. сетях или используй перед
                      походами по магазинам. Вперёд!
                 </p>
+                <form class="StartForm mt-2" method="get" action="{% url 'closet:index' %}">
+                    <input class="StartButton" type="submit" value="Начать" />
+                </form>
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="ab-ImageDiv">
+                <img class="ab-Image" src="{% static 'images/about_images/About6.jpg' %}" alt="">
+            </div>           
         </div>
     </div>
 </div>

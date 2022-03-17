@@ -4,7 +4,7 @@
     background-color: #E3C8FD;
 }
 
-.ab-Wrapper_Yellow-1, .ab-Wrapper_Yellow-2,.ab-Wrapper_Yellow-3 {
+.ab-Wrapper_Yellow-1, .ab-Wrapper_Yellow-2,.ab-Wrapper_Yellow-3, .ab-Wrapper_Yellow-4 {
     background-color: #FFFCC0;
 }
 
@@ -25,34 +25,81 @@
     max-width: 100%;
     height: auto;
 }
+
 /* ---------------------------------------- */
 
 /* Text styles */
-.ab-Text-1, .ab-Text-2, .ab-Text-3 {
+.ab-Text-pdr, .ab-Text-pdl{
     height: min-content;
+}
+
+.ab-Link {
+    color: black;
+    text-decoration: none;
+}
+
+.ab-Link:hover {
+    color: #FFFCC0;
+}
+/* ---------------------------------------- */
+
+/* Form styles */
+.StartForm { 
+    width: min-content;
+    margin: auto;
+}
+
+.StartButton {
+    background-color: #80F6C1;
+    border: none;
+    padding: 0.25rem 0.75rem;
+}
+
+.StartButton:hover {
+    background-color: #E3C8FD;
 }
 
 /* ---------------------------------------- */
 
-/* When small make picture go before text in partucular cases */
-@media (max-width: 575.98px) {
 
-    .ab-Wrapper_Yellow-1 {
+/* Responsive styles */
+
+@media (max-width: 575.98px) {
+    
+    .ab-Wrapper_Yellow-1, .ab-Wrapper_Yellow-3, .ab-Wrapper_White {
+        /* When small make picture go before text in partucular cases */
         flex-direction: column-reverse;
     }
-    
+
     .Wrapper {
         font-size: 1.1rem!important;
+    }
+
+    .row {
+        padding: 0!important;
+    }
+
+    .StartForm {
+        margin-bottom: 1em;
+    }
+    
+}
+
+
+/* Large to small */
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .Wrapper {
+        font-size: 1.4rem!important;
     }
 }
 /* ----------------------------------------------- */
 
-/* Responsive styles */
+
 @media (min-width: 576px) {
 
     /* Main block styles */
     
-        .ab-Text-1 {
+        .ab-Text-pdr{
             padding-right: 5%;
         }
     
@@ -62,11 +109,11 @@
 
 /* Main block styles */
 
-    .ab-Text-1 {
+    .ab-Text-pdr {
         padding-right: 10%;
     }
 
-    .ab-Text-2 {
+    .ab-Text-pdl {
         padding-left: 5%;
     }
 }
@@ -75,7 +122,7 @@
 
 /* Main block styles */
 
-    .ab-Text-1 {
+    .ab-Text-pdr {
         padding-right: 15%;
     }
 
@@ -85,11 +132,11 @@
 
 /* Main block styles */
 
-    .ab-Text-1 {
+    .ab-Text-pdr {
         padding-right: 20%;
     }
 
-    .ab-Text-2 {
+    .ab-Text-pdl {
         padding-left: 10%;
     }
 }
@@ -98,7 +145,7 @@
 
 /* Main block styles */
 
-    .ab-Text-1 {
+    .ab-Text-pdr {
         padding-right: 25%;
     }
 
@@ -108,11 +155,11 @@
 
 /* Main block styles */
 
-    .ab-Text-1 {
+    .ab-Text-pdr {
         padding-right: 30%;
     }
 
-    .ab-Text-2 {
+    .ab-Text-pdl {
         padding-left: 15%;
     }
 }

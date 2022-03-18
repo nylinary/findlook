@@ -1,0 +1,30 @@
+.lg-FormDiv > form > p > label { /* Django label styling */
+    font-size: 1rem;
+    padding-left: 1rem;
+} 
+
+.lg-FormDiv > form > p { /* Django paragraph styling */
+    background-color: #cccccc;
+    font-size: 1.3rem;
+}
+
+.lg-SubmitButton {
+    align-self: center;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .lg-Wrapper {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .lg-Wrapper {
+        font-size: 1rem!important;
+    }
+
+    .lg-Wrapper_Form { /* Remove padding to make text fill whole avaliable width*/
+        padding: 1em 0!important;
+    }
+}

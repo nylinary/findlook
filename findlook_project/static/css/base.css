@@ -118,6 +118,7 @@ nav.navbar {
     background-color: #80F6C1;
     border: none;
     padding: 0.25rem 0.75rem;
+	font-size: 1.2rem;
 }
 
 .SubmitButton:hover {
@@ -357,5 +358,9 @@ p.copyright{
 
 	img.icons {
 		width: 2em;
+	}
+
+	.SubmitButton {
+		font-size: inherit;
 	}
 }

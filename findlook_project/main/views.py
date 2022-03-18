@@ -115,11 +115,11 @@ class UserLoginView(View):
                     login(request, user)
                     return HttpResponseRedirect(reverse('index'))
                 else:
-                    return HttpResponse('not active user')
+                    return HttpResponse(json.dumps({'Error':True,'ErrorCode':'UserNotActive'}))
             else:
-                return HttpResponse('Data is not correct')
+                return HttpResponse(json.dumps({'Error':True, 'ErrorCode':'Data is not correct'}))
         else:
-            return HttpResponse('Data is not valid')
+            return HttpResponse(json.dumps({'Error':True, 'ErrorCode': 'Data is not valid'}))
 
 
 @login_required

@@ -2,10 +2,26 @@
 {% extends 'main/base.html' %}
 {% block body_block %}
 {% load static %}
-    <p>Please Login</p>
+    <!-- <p>Please Login</p>
     <form action="{% url 'main:login' %}" method="POST">
         {% csrf_token %}
         {{ login_form.as_p }}
         <input type="submit" class="send-btn" value="Отправить">
-    </form>
+    </form> -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <div class="Wrapper lg-Wrapper">
+        <div class="row lg-Wrapper_Form p-2">
+            <div class="col-sm-12">
+                <div class="lg-FormDiv d-flex flex-column align-items-center justify-content-center">
+                    <h1>Войти</h1>
+                    <p id="WarningMessage"></p>
+                    <form id="lg-Form" class="BasicForm" method="POST">
+                        {% csrf_token %}
+                        {{ login_form.as_p }}
+                        <input class="SubmitButton lg-SubmitButton" type="submit" value="Войти">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

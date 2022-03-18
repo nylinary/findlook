@@ -60,7 +60,7 @@ class UserProfileInfoForm(forms.ModelForm):
 
 class UserLoginForm(forms.Form):
     """Form for login page."""
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput())
+    username = forms.CharField(label='Почта', widget=forms.TextInput(attrs={'class': 'TextInput UsernameInput pl-1'}))
+    password = forms.CharField(label='Пароль',widget=forms.PasswordInput(attrs={'class':'TextInput PasswordInput pl-1'}))
 
     

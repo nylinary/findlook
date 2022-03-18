@@ -42,7 +42,7 @@ class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=CASCADE)
 
     # additional fields
-    instagramm_link = models.URLField(blank=True)
+    # instagramm_link = models.URLField(blank=True)
     profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
 
     def __str__(self) -> str:

@@ -23,7 +23,10 @@
 .mt-2 {
 	 margin-top: 2em!important;
  }
-
+/* -------------------------- */
+.ta-center {
+	text-align: center;
+}
 
 /* ---------------------- */
 
@@ -33,14 +36,10 @@ html, body {
 	height: 100%;
 }
 
-
-.bs-Wrapper
- {
-	padding: 0!important;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+.Hidden {
+	display: none;
 }
+
 .row {
 	width: 100%;
 	margin: 0;
@@ -50,7 +49,11 @@ html, body {
 	height: 100%;
 	width: 100%;
     font-size: 1.8rem; 
+	display: flex;
+	flex-direction: column;
+	padding: 0!important;
 }
+
 
 body {
 	font-family: 'JetBrains Mono', monospace;
@@ -225,6 +228,7 @@ footer.footer {
 	z-index: 1029 !important;
 	height: fit-content;
 	flex-shrink: 0;
+	font-size: 1rem;
 }
 
 footer>div.footer {

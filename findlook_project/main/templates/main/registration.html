@@ -3,18 +3,29 @@
   {% load static %}
   {% block body_block %}
   <script src="{% static 'js/registration.js' %}"></script>
-    <!-- {% if  registered %}
-        <p>Вы успешно прошли регистрацию.</p>
-    {% elif error %}
-      <p>Проверьте введенные данные..</p>
-    {% else %} -->
-        <p id="warning"></p>
+  <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+        <!-- <p id="warning"></p>
         <p>Регистрация</p>
         <form enctype="multipart/form-data" method="POST">
           {% csrf_token %}
           {{ user_form.as_p }}
           {{ profile_form.as_p }}
           <input class="send-btn " type="submit" value="Зарегистрироваться">  
-        </form>
-    <!-- {% endif %} -->
+        </form> -->
+  <div id="rg-Wrapper" class="Wrapper rg-Wrapper">
+      <div class="row rg-Wrapper_Form p-2">
+          <div class="col-xs-12">
+              <div class="rg-FormDiv d-flex flex-column align-items-center justify-content-center">
+                  <h1>Реги<wbr>страция</h1>
+                  <p id="WarningMessage"></p>
+                  <form id="rg-Form" class="BasicForm" enctype="multipart/form-data" method="POST">
+                      {% csrf_token %}
+                      {{ user_form.as_p }}
+                      {{ profile_form.as_p }}
+                      <input class="SubmitButton rg-SubmitButton" type="submit" value="Отправить">
+                  </form>  
+              </div>
+          </div>
+      </div>    
+  </div>
   {% endblock %}

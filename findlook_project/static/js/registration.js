@@ -1,5 +1,6 @@
 function createPItem(text) {
     let p = document.createElement('p')
+    p.setAttribute('class', 'm-auto ta-center');
     p.textContent = text;
     return p
 }
@@ -12,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function(){
             body: new FormData(document.querySelector("form"))
         })
         let response_json = await response.json();
-        let container = document.querySelector("div[class=container]");
+        let container = document.querySelector("div[id=rg-Wrapper]");
         if (response_json.error){
-            let warning = document.querySelector("p[id=warning]");
+            let warning = document.querySelector("p[id=WarningMessage]");
             warning.style.color = "red";
             warning.textContent = "Некорректные данные!";            
         }

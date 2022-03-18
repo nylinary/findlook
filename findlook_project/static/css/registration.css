@@ -1,0 +1,39 @@
+.rg-FormDiv > form > p > label { /* Django label styling */
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+.rg-FormDiv > form > p:nth-of-type(5) > label { /* Django label styling */
+    font-size: 1.2rem;
+    padding-left: 1rem;
+} 
+
+.rg-FormDiv > form > p { /* Django paragraph styling */
+    background-color: #cccccc;
+    font-size: 1.3rem;
+}
+
+.rg-SubmitButton {
+    align-self: center;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .rg-Wrapper {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .rg-Wrapper {
+        font-size: 1rem;
+    }
+
+    .rg-Wrapper_Form { /* Remove padding to make text fill whole avaliable width*/
+        padding: 1em 0!important;
+    }
+    .rg-FormDiv > form > p:nth-of-type(5) > label { /* Django label styling */
+        font-size: 1rem;
+    } 
+}
+/* -------------------------------- */

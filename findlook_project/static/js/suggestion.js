@@ -1,5 +1,6 @@
 function createPItem(text) {
     let p = document.createElement('p')
+    p.setAttribute('class', 'm-auto ta-center');
     p.textContent = text;
     return p
 }

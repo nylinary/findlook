@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
             body: new FormData(document.querySelector("form"))
         })
         let response_json = await response.json();
-        let container = document.querySelector("div[class=container]");
+        let container = document.getElementById("sg-Wrapper");
         if (response_json.success){
             container.innerHTML='';
             container.appendChild(createPItem("Ваш отзыв отправлен!"));
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
             })
         }
         else {
-            let warning = document.querySelector("p[id=warning]");
+            let warning = document.getElementById("WarningMessage");
             warning.style.color = "red";
             warning.textContent = "Некорректные данные!";
         }

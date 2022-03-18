@@ -3,7 +3,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
 <div class="Wrapper">
-    <div class="row ab-Wrapper_Pink pd-2">
+    <div class="row ab-Wrapper_Pink p-2">
         <div class="col-xs-12 col-sm-4">
             <div class="ab-ImageDiv">
                 <img class="ab-Image" src="{% static 'images/about_images/About1.jpg' %}" alt="">
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <div class="row ab-Wrapper_White pd-2">
+    <div class="row ab-Wrapper_White p-2">
         <div class="col-xs-12 col-sm-8 d-flex align-items-center">
             <div class="ab-Text-pdl">
                 <h1>Шаг 3 - Создавай свои образы!</h1>
@@ -82,7 +82,7 @@
                      походами по магазинам. Вперёд!
                 </p>
                 <form class="StartForm mt-2" method="get" action="{% url 'closet:index' %}">
-                    <input class="StartButton" type="submit" value="Начать" />
+                    <input class="SubmitButton" type="submit" value="Начать" />
                 </form>
             </div>
         </div>

@@ -44,23 +44,13 @@
 /* ---------------------------------------- */
 
 /* Form styles */
+
 .StartForm { 
     width: min-content;
     margin: auto;
 }
 
-.StartButton {
-    background-color: #80F6C1;
-    border: none;
-    padding: 0.25rem 0.75rem;
-}
-
-.StartButton:hover {
-    background-color: #E3C8FD;
-}
-
 /* ---------------------------------------- */
-
 
 /* Responsive styles */
 

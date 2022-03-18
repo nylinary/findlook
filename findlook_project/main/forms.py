@@ -7,17 +7,22 @@ from .models import UserSuggested, UserProfileInfo
 from django.contrib.auth.models import User
 
 def check_if_gmail(value):
-    if value.split('@')[1] != 'gmail.com':
-        raise forms.ValidationError("Only google mail.")
+    try:
+        if value.split('@')[1] != 'gmail.com':
+            raise forms.ValidationError("Only google mail.")
+    except Exception:
+        raise forms.ValidationError("Enter email")
 
 class SuggestionForm(forms.ModelForm):
-    name = forms.CharField(required=False)
-    email = forms.EmailField(validators=[check_if_gmail])
-    message = forms.CharField(widget=forms.Textarea(
-            attrs={'placeholder': 'Ваши предложения..'}))
+    name = forms.CharField(label='Имя', required=False, widget=forms.TextInput(attrs={'class': 'TextInput NameInput pl-1'}))
+    email = forms.EmailField(label='Почта', validators=[check_if_gmail],
+                             widget=forms.TextInput(attrs={'class':'TextInput EmailInput pl-1'}))
+    message = forms.CharField(label='Сообщение', widget=forms.Textarea(
+            attrs={'class': 'TextInput TextareaInput pl-1'}))
+    
     botcatcher = forms.CharField(required=False,
                                  widget=forms.HiddenInput,
-                                 validators=[validators.MaxLengthValidator(0)])
+                                 validators=[validators.MaxLengthValidator(0)]),
     class Meta:
         model = UserSuggested
         fields = '__all__'

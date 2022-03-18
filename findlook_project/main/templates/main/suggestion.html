@@ -2,14 +2,33 @@
 {% extends 'main/base.html' %}
   {% block body_block %}
     {% load static %}
-        <script src="{% static 'js/suggestion.js' %}"></script>
-            <p id="warning"></p>
-            <p id="creditals-hint">
-                Что нужно исправить или добавить?
-            </p>
-            <form method="POST">
-                {{suggestion_form.as_p}}
-                {% csrf_token %}
-                <input type="submit" class="send-btn" value="Отправить">
-            </form>
+    <script src="{% static 'js/suggestion.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/suggestion.css' %}">
+    <div id="sg-Wrapper" class="Wrapper sg-Wrapper">  
+        <div class="row sg-Wrapper_Text p-2"> 
+            <div class="col-xs-12 d-flex flex-column justify-content-center align-items-center">
+                <div class="sg-TextDiv d-flex flex-column align-items-center">
+                    <h1>Напишите нам</h1>
+                    <p class="sg-TextParagraph">
+                        С помощью этой формы вы можете связаться с нами,
+                        чтобы предложить сотрудни<wbr>чество или дать обратную связь по работе сайта.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row sg-Wrapper_Form pb-1">
+            <div class="col-xs-12 d-flex flex-column align-items-center">
+                <div class="sg-TextDiv">
+                    <p id="WarningMessage" class="sg-TextParagraph"></p>
+                </div>
+                <div class="sg-FormDiv d-flex flex-column align-items-center justify-content-center">
+                    <form id="sg-Form" class="BasicForm sg-Form" method="POST">
+                    {{suggestion_form.as_p}}
+                    {% csrf_token %}
+                    <input type="submit" class="sg-SubmitButton SubmitButton" value="Отправить">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
   {% endblock %}

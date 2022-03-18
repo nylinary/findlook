@@ -2,12 +2,28 @@
 
 /* Utility Styles */
 
-.pd-2 {
+/* Padding styles */
+.p-2 {
 	padding: 2em!important;
 }
- .mt-2 {
+.pt-2 {
+	padding-top: 2em!important;
+}
+.pb-1 {
+	padding-bottom: 1rem!important;
+}
+.pb-2 {
+	padding-bottom: 2rem!important;
+}
+.pl-1 {
+	padding-left: 1rem!important;
+}
+
+/* Margin syles */
+.mt-2 {
 	 margin-top: 2em!important;
  }
+
 
 /* ---------------------- */
 
@@ -22,7 +38,6 @@ html, body {
  {
 	padding: 0!important;
 	height: 100%;
-	/* overflow-x: hidden; */
 	display: flex;
 	flex-direction: column;
 }
@@ -34,10 +49,6 @@ html, body {
 .Wrapper {
 	height: 100%;
 	width: 100%;
-    /* display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-around; */
     font-size: 1.8rem; 
 }
 
@@ -78,6 +89,39 @@ nav.navbar {
 }
 
 /* -------------------------------- */
+
+/* Form styles */
+.BasicForm {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* -------------------------------- */
+
+/* Text styles */
+.TextInput {
+	width: 100%;
+    margin-bottom: 1rem;
+    background-color: #cccccc;
+    outline: none;
+    border: none;
+}
+/* ---------------------------------- */
+
+/* Button styles */
+
+.SubmitButton {
+    background-color: #80F6C1;
+    border: none;
+    padding: 0.25rem 0.75rem;
+}
+
+.SubmitButton:hover {
+    background-color: #E3C8FD;
+}
+
+/* ---------------------------------------- */
 
 /* Logo styles. */
 div.logo {

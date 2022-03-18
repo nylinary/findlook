@@ -1,0 +1,48 @@
+/* Wrapper styles */
+.sg-Wrapper_Text, .sg-Wrapper_Form {
+    background-color: #EFEFEF;
+}
+/* ------------------------------- */
+
+.sg-TextParagraph { /* To make p not take whole width */
+ 
+    width: 50%;
+}
+
+.sg-FormDiv > form > p > label { /* Django label styling */
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+.sg-FormDiv > form > p { /* Django paragraph styling */
+    background-color: #cccccc;
+    font-size: 1.3rem;
+}
+
+
+.sg-SubmitButton { /* Additional class to general submit button component */
+    align-self: center;
+}
+
+
+/* Styles for smaller screens */
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .sg-Wrapper {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sg-Wrapper {
+        font-size: 1rem;
+    }
+
+    .sg-Wrapper_Form, .sg-Wrapper_Text { /* Remove padding to make text fill whole avaliable width*/
+        padding: 1em 0!important;
+    }
+    .sg-TextParagraph { /* Make text take up whole width of parent div */
+        width: inherit;
+    }
+
+}
+/* -------------------------------- */

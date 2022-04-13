@@ -3,24 +3,25 @@
       {% block body_block %}
       {% load static %}
       <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-      <div class="container-fluid content overflow-hidden">
-          <div class="row justify-content-between gy-5">
-              <div class="col-xs-12 col-sm-4">
-                <div class="landing-images">
-                    <img class="landing-images" src="{% static 'images/landing_images/ns-37rVmK3jY-c-unsplash.jpg' %}" alt="">
-                </div>
+      <div id="mn-Wrapper" class="mn-Wrapper Wrapper">
+          <div class="row justify-content-between mn-Wrapper_Content p-2">
+              <div class="col-xs-12 col-sm-4 m-auto">
+                  <div class="mn-ImageDiv">
+                    <img class="mn-Image" src="{% static 'images/landing_images/ns-37rVmK3jY-c-unsplash.jpg' %}" alt="">
+                  </div>
               </div>
               <div class="col-xs-12 col-sm-8 d-flex align-items-center">
-                  <div class="main-block">
-                    <h1 class="centered-headers" id="main-header">Найди свой образ!</h1>
-                    <p>
+                  <div class="mn-TextDiv">
+                      <h1 class="mn-Header ta-center mb-1">Найди свой образ!</h1>
+                      <p>
                         Этот сервис был создан для удобного подбора образа не выходя из дома. С его помощью вы можете выбирать вещи из разных магазинов и категорий, и смотреть, как они будут смотреться вместе.
-                    </p>
-                    <form class="start" method="get" action="{% url 'closet:index' %}">
-                        <input class="start" type="submit" value="Начать" />
-                    </form>
-                </div>
+                      </p>
+                      <form class="mn-Form BasicForm" method="get" action="{% url 'closet:index' %}">
+                          <input class="mn-SubmitButton SubmitButton" type="submit" value="Начать">
+                      </form>
+                  </div>
               </div>
           </div>
       </div>
+
       {% endblock %}

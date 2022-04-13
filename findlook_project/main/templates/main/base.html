@@ -15,91 +15,91 @@
     <body>
         <div class="Wrapper">
         <!-- Header -->
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid justify-content-between header">
-                  <div class=" logo" href="#">
-                    <img class="logo" src="{% static 'images/logo.png' %}" alt="">
+            <nav class="Navbar navbar navbar-expand-lg">
+                <div class="container-fluid justify-content-between">
+                  <div class="bs-LogoDiv_Header" href="#">
+                    <img class="bs-LogoImg" src="{% static 'images/logo.png' %}" alt="">
                   </div>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <img class="hamburger-icon" src="{% static 'images/hamburger.png' %}" alt="">
+                  <button class="navbar-toggler HamburgerButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <img class="HamburgerImg" src="{% static 'images/hamburger.png' %}" alt="">
                   </button>
-                  <div class=" offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
+                  <div class="SidebarDiv offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="SidebarHeaderDiv offcanvas-header">
                       <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'closet:index' %}">Образы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Аккаунт</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'suggestion' %}">Связь</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:about' %}">Помощь</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:register' %}">Регистрация</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">Выйти</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:login' %}">Войти</a>                    
-                        </li>
-                        {% endif %}
-                      </ul>
+                    <div class="SidebarBodyDiv offcanvas-body justify-content-center">
+                        <div class="ListDiv_Header">
+                            <ul class="bgc-black NavbarUl navbar-nav justify-content-center flex-grow-1 p-0 m-0">
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'index' %}">Главная</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'closet:index' %}">Образы</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="#">Аккаунт</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'suggestion' %}">Связь</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'main:about' %}">Помощь</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'main:register' %}">Регистрация</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'logout' %}">Выйти</a>
+                                </li>
+                                {% else %}
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'main:login' %}">Войти</a>                    
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
                   </div>
                 </div>
               </nav>   
-        <div class="main-content">
+        <div class="Content">
             {% block body_block %}
             {% endblock %}
         </div>
   <!-- Footer -->
-        <footer class="footer">
-            <div class="container-fluid footer">
-                <div class="row justify-content-around footer">
-                    <div class="footer links col-sm-6 col-md-4">
-                        <ul class="footer links">
-                            <li><a class="footer" href="{% url 'index' %}">- Главная</a></li>
-                            <li><a class="footer" href="{% url 'closet:index' %}">- Образы</a></li>
-                            <li><a class="footer" href="">- Аккаунт</a></li>
-                            <li><a class="footer" href="{% url 'suggestion' %}">- Связь</a></li>
-                            <li><a class="footer" href="">- Помощь</a></li>
-                            <li><a class="footer" href="{% url 'main:register' %}">- Регистрация</a></li>
+        <footer class="Footer">
+            <div class="FooterDiv container-fluid">
+                <div class="row justify-content-around flex-xs-column">
+                    <div class="ListDiv_Footer col-sm-6 col-md-4">
+                        <ul class="FooterUl p-0 m-0">
+                            <li><a class="FooterLink Link" href="{% url 'index' %}">- Главная</a></li>
+                            <li><a class="FooterLink Link" href="{% url 'closet:index' %}">- Образы</a></li>
+                            <li><a class="FooterLink Link" href="">- Аккаунт</a></li>
+                            <li><a class="FooterLink Link" href="{% url 'suggestion' %}">- Связь</a></li>
+                            <li><a class="FooterLink Link" href="">- Помощь</a></li>
+                            <li><a class="FooterLink Link" href="{% url 'main:register' %}">- Регистрация</a></li>
                         </ul>
                     </div>
-                    <div class="footer links col-sm-6 col-md-4">
-                        <ul class="footer links">
+                    <div class="ListDiv_Footer col-sm-6 col-md-4">
+                        <ul class="FooterUl p-0 m-0">
                             <li>
-                                <i><img class="icons" src="{% static 'images/phone.png' %}" alt=""></i>
-                                <p class="icons">+7-911-379-80-86</p>
+                                <i><img class="bs-IconImg IconImg" src="{% static 'images/phone.png' %}" alt=""></i>
+                                <p class="bs-IconP IconP">+7-911-379-80-86</p>
                             </li>
                             <li>
-                                <i><img class="icons" src="{% static 'images/mail.png' %}" alt=""></i>
-                                <p class="icons">njt55cs@gmail.com</p>
+                                <i><img class="bs-IconImg IconImg" src="{% static 'images/mail.png' %}" alt=""></i>
+                                <p class="bs-IconP IconP">njt55cs@gmail.com</p>
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-logo d-none d-sm-none d-md-none d-lg-block col-md-4">
-                            <!-- <div class=" logo" href="#"> -->
-                                <img class="logo" src="{% static 'images/logo.png' %}" alt="">
-                              <!-- </div> -->
+                    <div class="bs-LogoDiv_Footer d-none d-sm-none d-md-none d-lg-block col-md-4">
+                        <img class="bs-LogoImg" src="{% static 'images/logo.png' %}" alt="">
                     </div>
                 </div>
-                <div class="copyright">
-                    <p class="copyright">Copyright 2022 All Rights Reserved Findlook</p>
+                <div class="CopyrightDiv">
+                    <p class="CopyrightP">Copyright 2022 All Rights Reserved Findlook</p>
                 </div>
             </div>
         </footer>

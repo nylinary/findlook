@@ -3,8 +3,14 @@
 /* Utility Styles */
 
 /* Padding styles */
+.p-0 {
+	padding: 0!important;
+}
 .p-2 {
 	padding: 2em!important;
+}
+.p-05 {
+	padding: 0.5rem!important;
 }
 .pt-2 {
 	padding-top: 2em!important;
@@ -20,14 +26,42 @@
 }
 
 /* Margin syles */
+.m-auto {
+	margin: auto!important;
+}
+.m-0 {
+	margin: 0!important;
+}
+.m-1 {
+	margin: 1!important;
+}
+.mb-1 {
+	margin-bottom: 1rem!important;
+}
 .mt-2 {
 	 margin-top: 2em!important;
  }
 /* -------------------------- */
+
+/* Other utility styles. */
 .ta-center {
 	text-align: center;
 }
-
+/* List utility styles. */
+.lst-none {
+	list-style-type: none;
+}
+/* Links utility styles */
+.td-none {
+	text-decoration: none;
+}
+/* Color utility styles */
+.bgc-black {
+	background-color: #000000;
+}
+.c-white {
+	color: white;
+}
 /* ---------------------- */
 
 
@@ -36,12 +70,23 @@ html, body {
 	height: 100%;
 }
 
+body {
+	font-family: 'JetBrains Mono', monospace;
+	background-color: #ebeeef;
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
 .Hidden {
 	display: none;
 }
 
+/* Some strange problem with bootstrap row margin. If not 0 at base level, then some bugs happen.
+But the strange thing is, when use margin on rows in other css files, re-writing this margin-0, then no bugs happen.
+So till this is unfixed bug, margin for bootsrap row will be set to zero at base css level.*/
 .row {
-	width: 100%;
 	margin: 0;
 }
 
@@ -54,29 +99,21 @@ html, body {
 	padding: 0!important;
 }
 
-
-body {
-	font-family: 'JetBrains Mono', monospace;
-	background-color: #ebeeef;
+.Link {
+	text-decoration: none;
 }
 
-ol, ul {
-	padding: 0;
-	margin: 0;
+.IconImg {
+	width: 40px;
 }
 
-h1 {
-	padding-bottom: 1em;
+.IconP {
+	display: inline;
 }
-
-.centered-headers {
-	text-align: center;
-}
-
 /* -------------------------------- */
 
-/* Style for main-content div below the header. */
-.main-content {
+/* Style for Content div below the header. */
+.Content {
 	flex: 1 0 auto;
 }
 
@@ -84,7 +121,7 @@ h1 {
 /* -------------------------------- */
 
 /* Header */
-nav.navbar {
+.Navbar {
 	background-color: black;
 	font-size: 1.25rem;
 	font-weight: 600;
@@ -128,7 +165,7 @@ nav.navbar {
 /* ---------------------------------------- */
 
 /* Logo styles. */
-div.logo {
+.bs-LogoDiv_Header {
 	display: flex;
 	flex: 1;
 	height: 135px;
@@ -137,7 +174,7 @@ div.logo {
 	padding: 0 1em 0;
 }
 
-img.logo {
+.bs-LogoImg {
 	max-height: 115px;
 	padding: 7px 0 7px;
 }
@@ -145,7 +182,7 @@ img.logo {
 /* -------------------------------- */
 
 /* Styles for hamburger button. */
-button.navbar-toggler {
+.HamburgerButton {
 	height: 50px;
 	width: 50px;
 	margin: 0;
@@ -155,11 +192,11 @@ button.navbar-toggler {
 	border-radius: 50%;
 }
 
-button.navbar-toggler:hover {
+.HamburgerButton:hover {
 	background-color: #505050;
 }
 
-img.hamburger-icon {
+.HamburgerImg {
 	max-height: 50px;
 }
 
@@ -176,48 +213,39 @@ img.hamburger-icon {
    free space while of navbar on big screens.
    Logo takes the rest 10%.
 */
-div.offcanvas-end {
+.SidebarDiv {
 	flex: 90%;
 }
 
 /* -------------------------------- */
 
 /* Styles for header and body of side menu. */
-.offcanvas-header {
+.SidebarHeaderDiv {
 	background-color: #E3C8FD;
 	color: black;
 }
 
-.offcanvas-body{
+.SidebarBodyDiv {
+	padding: 0;
 	background-color: black;
 }
 
-.offcanvas-body {
-	padding: 0;
-}
-
 /* -------------------------------- */
 
-/* List with nav items. */
-ul.navbar-nav {
-	background-color: #000000;
-}
-
-/* -------------------------------- */
 
 /* Styles for nav-items. */
-.nav-item {
+.NavItemLi {
 	background-color: #E3C8FD;
 }
 
-.nav-item:hover {
+.NavItemLi:hover {
 	background-color: #80F6C1;
 }
 
 /* -------------------------------- */
 
-/* Styles for nav-links. */
-.nav-link, .nav-link:hover, .nav-link:focus, .nav-link:active {
+/* Styles for NavLinks. */
+.NavLink, .NavLink:hover, .NavLink:focus, .NavLink:active {
 	color: black;
 }
 
@@ -225,52 +253,43 @@ ul.navbar-nav {
 /* -------------------------------- */
 
 /* Footer */
-footer.footer {
+.Footer {
 	z-index: 1029 !important;
 	height: fit-content;
 	flex-shrink: 0;
 	font-size: 1rem;
-}
-
-footer>div.footer {
 	background-color: #000000;
-	padding: 1em 0 1em;
 }
 
-div.footer.links {
+.FooterDiv {
+	background-color: #000000;
+	padding: 1em 1em 0 1em;
+}
+
+.ListDiv_Footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-div.footer-logo {
+.bs-LogoDiv_Footer {
 	text-align: center;
 	margin: auto;
 }
 
-img.icons {
-	width: 40px;
-}
-
-p.icons {
-	display: inline;
+.bs-IconP {
 	color: white;
 }
 
-ul.footer.links {
-	list-style-type: none;
-}
-
-a.footer {
-	text-decoration: none;
+.FooterLink {
 	color: white;
 }
 
-a.footer:hover {
+.FooterLink:hover {
 	color: #80F6C1;
 }
 
-p.copyright{
+.CopyrightP{
 	font-size: 0.75em;
 	color: white;
 	text-align: center;
@@ -282,7 +301,7 @@ p.copyright{
 /* Styles when moving from medium to large screen */
 
 @media (min-width: 992.01px) {
-	.nav-link {
+	.NavLink {
 		padding: 0.5em 0.675em !important;
 	}
 }
@@ -292,20 +311,20 @@ p.copyright{
 /* Styles for page when it's < lg size */
 @media (max-width: 991.98px) {
 
-	.nav-item {
+	.NavItemLi {
 		background-color: #000000 ;
 		color: white;
 	}
 
-	.nav-link, .nav-link:focus, .nav-link:active {
+	.NavLink, .NavLink:focus, .NavLink:active {
 		color: white !important;
 	}
 
-	.nav-link:hover {
+	.NavLink:hover {
 		color: #000000 !important;
 	}
 
-	.nav-link {
+	.NavLink {
         padding: 0.5rem 1rem!important;
 	}
 }
@@ -314,20 +333,20 @@ p.copyright{
 @media (max-width: 575.98px) {
 
 	/* Main styles */
-	div.main-content {
+	.Content {
 		font-size: 0.75rem;
 	}
 	/* ------------------------------ */
 	
 	/* Header styles */
-	nav.navbar {
+	.Navbar {
 		height: 100px;
 	}
 
 /* -------------------------------- */
 
 	/* Logo styles. */
-	div.logo {
+	.bs-LogoDiv_Header {
 		display: flex;
 		flex: 1;
 		height: fit-content;
@@ -336,27 +355,22 @@ p.copyright{
 		padding: 0;
 	}
 
-	img.logo {
+	.bs-LogoImg{
 		max-height: 75px;
 	}	
 
 /* -------------------------------- */	
 
 	/* Footer styles */
-	footer.footer {
+	.Footer {
 		font-size: 0.75rem;
 	}
 
-	div.footer {
-		flex-direction: column;
-		justify-content: space-between;
-	}
-
-	div.row>div.footer {
+	.ListDiv_Footer {
 		padding: 1em 0 1em;
 	}
 
-	img.icons {
+	.IconImg {
 		width: 2em;
 	}
 
@@ -368,8 +382,11 @@ p.copyright{
 /* ---------------------------------------------- */
 
 @media (max-width: 250px) {
-	.icons {
+	.bs-IconImg {
 		display: none;
+	}
+	.bs-IconP {
+		color: #80F6C1;
 	}
 }
 

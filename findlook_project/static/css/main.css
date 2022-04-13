@@ -1,28 +1,20 @@
 /* || General styles */
 
-.content {   /* Centering rows in container */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.mn-Wrapper {   /* Centering rows in container */
     align-items: center;
     justify-content: space-around;
-    font-size: 1.5rem;
-}
-
-#main-header {
-    margin-bottom: 1em;
 }
 
 /* -------------------------------------- */
 
 /* || Image styles */
-div.landing-images {
+.mn-ImageDiv {
     text-align: center;
     padding: 1em 0 1em;
 }
 
 
-img.landing-images {
+.mn-Image {
     max-width: 100%;
     height: auto;
 }
@@ -30,7 +22,7 @@ img.landing-images {
 /* --------------------------------------- */
 
 /* || Text styles */
-.main-block {
+.mn-TextDiv {
     height: min-content;
 }
 
@@ -38,19 +30,9 @@ img.landing-images {
 
 /* Button styles */
 
-form.start {
+.mn-Form {
     width: min-content;
     margin: auto;
-}
-
-input.start {
-    background-color: #80F6C1;
-    border: none;
-    padding: 0.25rem 0.75rem;
-}
-
-input.start:hover {
-    background-color: #E3C8FD;
 }
 
 /* ------------------------------------------ */
@@ -58,7 +40,7 @@ input.start:hover {
 @media (max-width: 575.98px) { 
 /* Bootstrap xs < 576px but max-width is <= 576, so i needed to use 575.98 for simultanious changes*/
     /* General styles */
-    .content {
+    .mn-Wrapper {
         font-size: 1.1rem;
     }
 
@@ -66,12 +48,12 @@ input.start:hover {
 
     /* Main block styles */
 
-    form.start {
+    .mn-SubmitButton {
         margin-bottom: 1em;
     }
 
-    #main-header {
-        margin-bottom: 0.5em;
+    .mn-Header {
+        margin-bottom: 0.5em!important;
     }
 
     /* ------------------------------------------ */
@@ -81,7 +63,7 @@ input.start:hover {
 
 /* Main block styles */
 
-    .main-block {
+    .mn-TextDiv {
         padding-right: 5%;
     }
 
@@ -91,7 +73,7 @@ input.start:hover {
 
 /* Main block styles */
 
-    .main-block {
+    .mn-TextDiv {
         padding-right: 10%;
     }
 }
@@ -100,7 +82,7 @@ input.start:hover {
 
 /* Main block styles */
 
-    .main-block {
+    .mn-TextDiv {
         padding-right: 15%;
     }
 }
@@ -109,7 +91,7 @@ input.start:hover {
 
 /* Main block styles */
 
-    .main-block {
+    .mn-TextDiv {
         padding-right: 20%;
     }
 }
@@ -118,7 +100,7 @@ input.start:hover {
 
 /* Main block styles */
 
-    .main-block {
+    .mn-TextDiv {
         padding-right: 25%;
     }
 }
@@ -127,7 +109,19 @@ input.start:hover {
 
 /* Main block styles */
 
-    .main-block {
+    .mn-TextDiv {
         padding-right: 30%;
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .mn-Wrapper {
+        font-size: 1.4rem!important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mn-Wrapper_Content {
+        padding: 0!important;
     }
 }

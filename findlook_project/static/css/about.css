@@ -45,7 +45,7 @@
 
 /* Form styles */
 
-.StartForm { 
+.ab-Form { 
     width: min-content;
     margin: auto;
 }
@@ -69,7 +69,7 @@
         padding: 0!important;
     }
 
-    .StartForm {
+    .ab-Form {
         margin-bottom: 1em;
     }
     

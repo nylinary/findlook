@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/closet/base.css' %}">
+        <title>findlook</title>     
+    </head>
+    <body>
+        <div class="Wrapper">
+        <!-- Header -->
+            <nav class="Navbar navbar">
+                <div class="container-fluid justify-content-between">
+                  <div class="bs-LogoDiv_Header" href="#">
+                    <img class="bs-LogoImg" src="{% static 'images/logo.png' %}" alt="">
+                  </div>
+                  <button class="navbar-toggler HamburgerButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <img class="HamburgerImg" src="{% static 'images/hamburger.png' %}" alt="">
+                  </button>
+                  <div class="SidebarDiv offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="SidebarHeaderDiv offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="SidebarBodyDiv offcanvas-body justify-content-center">
+                        <div class="ListDiv_Header">
+                            <ul class="bgc-black NavbarUl navbar-nav justify-content-center flex-grow-1 p-0 m-0">
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'index' %}">Главная</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'closet:index' %}">Образы</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="#">Аккаунт</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'suggestion' %}">Связь</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'main:about' %}">Помощь</a>
+                                </li>
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'main:register' %}">Регистрация</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'logout' %}">Выйти</a>
+                                </li>
+                                {% else %}
+                                <li class="NavItemLi nav-item">
+                                    <a class="NavLink nav-link" href="{% url 'main:login' %}">Войти</a>                    
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>   
+        <div class="Content">
+            {% block body_block %}
+            {% endblock %}
+        </div>
+  <!-- Footer -->
+        <footer class="Footer">
+            <div class="FooterDiv container-fluid">
+                <div class="row justify-content-around flex-xs-column">
+                    <div class="ListDiv_Footer col-sm-6 col-md-4">
+                        <ul class="FooterUl p-0 m-0">
+                            <li><a class="FooterLink Link" href="{% url 'index' %}">- Главная</a></li>
+                            <li><a class="FooterLink Link" href="{% url 'closet:index' %}">- Образы</a></li>
+                            <li><a class="FooterLink Link" href="">- Аккаунт</a></li>
+                            <li><a class="FooterLink Link" href="{% url 'suggestion' %}">- Связь</a></li>
+                            <li><a class="FooterLink Link" href="">- Помощь</a></li>
+                            <li><a class="FooterLink Link" href="{% url 'main:register' %}">- Регистрация</a></li>
+                        </ul>
+                    </div>
+                    <div class="ListDiv_Footer col-sm-6 col-md-4">
+                        <ul class="FooterUl p-0 m-0">
+                            <li>
+                                <i><img class="bs-IconImg IconImg" src="{% static 'images/phone.png' %}" alt=""></i>
+                                <p class="bs-IconP IconP">+7-911-379-80-86</p>
+                            </li>
+                            <li>
+                                <i><img class="bs-IconImg IconImg" src="{% static 'images/mail.png' %}" alt=""></i>
+                                <p class="bs-IconP IconP">njt55cs@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bs-LogoDiv_Footer d-none d-sm-none d-md-none d-lg-block col-md-4">
+                        <img class="bs-LogoImg" src="{% static 'images/logo.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="CopyrightDiv">
+                    <p class="CopyrightP">Copyright 2022 All Rights Reserved Findlook</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </body>
+</html>

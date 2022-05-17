@@ -3,12 +3,20 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from . import models
 from .forms import (SuggestionForm, UserLoginForm, UserProfileInfoForm, UserForm)
+from django.forms import model_to_dict
 import json
 from django.contrib.auth.password_validation import validate_password
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import TemplateView, ListView, DetailView, View
+# generics - классы для представления DRF.
+from rest_framework import generics
+# APIview стоит во главе иерархии всех классов представления DRF. 
+# ListView наследуется от APIView 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import UserSerializer
 # Create your views here.
 
 
@@ -126,3 +134,25 @@ class UserLoginView(View):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+
+# class UserSuggestionAPIView(generics.ListAPIView):
+#     queryset = models.UserSuggested.objects.all()
+#     serializer_class = UserSerializer
+
+class UserSuggestionAPIView(APIView):
+    def get(self, request):
+        data = models.UserSuggested.objects.all()
+        # Response function translate dictionary into json string.
+        return Response({'names':data.values('name')})
+
+    def post(self, request):
+        post_new = models.UserSuggested.objects.create(
+            name = request.data['name'],
+            email = request.data['email'],
+            message = request.data['message'],
+        )
+        return Response({'post': model_to_dict(post_new)})
+
+

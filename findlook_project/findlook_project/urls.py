@@ -27,6 +27,7 @@ urlpatterns = [
     path('suggestion', main_views.SuggestionView.as_view(), name='suggestion'),
     path('logout', main_views.user_logout, name='logout'),
     path('closet/', include('closet.urls')),
+    path('api/v1/usersuggestions/', main_views.UserSuggestionAPIView.as_view()),
     
 ]
 urlpatterns += staticfiles_urlpatterns()

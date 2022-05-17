@@ -1,7 +1,7 @@
-{% extends 'main/base.html' %}
+{% extends 'closet/base.html' %}
 {% block body_block %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/closet.css' %}">
+<link rel="stylesheet" href="{% static 'css/closet/closet.css' %}">
 <script type="text/javascript" src="{% static 'js/move_img.js' %}"></script>
 <script>
 
@@ -113,10 +113,10 @@ window.onload = function() {
 };
 </script>
 <div class="body-clothes">
-<img src="{% static 'images/adidas/hoodies/Hudi_Graphics_Symbol_chernyj_H13448_01_laydown_ccexpress.png' %}" id="top-pics" class="body-clothes" alt="wtf man">
+    <img src="{% static 'images/adidas/hoodies/Hudi_Graphics_Symbol_chernyj_H13448_01_laydown_ccexpress.png' %}" id="top-pics" class="body-clothes" alt="wtf man">
 </div>
 <div class="leg-clothes">
-<img src="{% static 'images/adidas/trousers/Bryuki_Adicolor_Nylon_bezhevyj_H06695_01_laydown_ccexpress.png' %}" id="leg-pics" class="leg-clothes" alt="">
+    <img src="{% static 'images/adidas/trousers/Bryuki_Adicolor_Nylon_bezhevyj_H06695_01_laydown_ccexpress.png' %}" id="leg-pics" class="leg-clothes" alt="">
 </div>
 <div class="buttons-top">
     <button id="bnext-top" type="button">Next</input>

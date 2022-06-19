@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-&_ur#drt28phv8dit78&#9$p)u!%2$$l30f&os69_p7ts06jyb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,6 +85,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': "db_endicomp_copy",
+#         'USER': "root",
+#         'HOST': "localhost",
+#         'PASSWORD': "root",
+#         'PORT': "3306",
+#         }
+#     }
 
 
 # Password validation

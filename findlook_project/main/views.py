@@ -16,34 +16,37 @@ from rest_framework import generics
 # ListView наследуется от APIView 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import UserSerializer
+from .serializers import *
+from .models import *
+from typing import List, Dict
+from .ex_handler import ExceptionResolver as ER
 # Create your views here.
 
 
 
 class IndexView(TemplateView):
     template_name = 'main/main.html'
-    def get_context_data(self, **kwargs: any) -> dict[str, any]:
+    def get_context_data(self, **kwargs: any) -> Dict[str, any]:
         context = super().get_context_data(**kwargs)
         # Edit context if needed.
         return context
 
 class AboutView(TemplateView):
     template_name = 'main/about.html'
-    def get_context_data(self, **kwargs: any) -> dict[str, any]:
+    def get_context_data(self, **kwargs: any) -> Dict[str, any]:
         return super().get_context_data(**kwargs)
         
 
-class WebpageListView(ListView):
-    model = models.Webpage
-    context_object_name = 'webpages'
-    template_name = 'main/main.html'
+# class WebpageListView(ListView):
+#     model = models.Webpage
+#     context_object_name = 'webpages'
+#     template_name = 'main/main.html'
 
 
-class WebpageDetailView(DetailView):
-    model = models.Webpage
-    template_name = 'main/detail.html'
-    context_object_name = 'webpage_detail'
+# class WebpageDetailView(DetailView):
+#     model = models.Webpage
+#     template_name = 'main/detail.html'
+#     context_object_name = 'webpage_detail'
 
 
 
@@ -154,5 +157,3 @@ class UserSuggestionAPIView(APIView):
             message = request.data['message'],
         )
         return Response({'post': model_to_dict(post_new)})
-
-

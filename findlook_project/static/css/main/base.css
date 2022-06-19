@@ -64,6 +64,11 @@
 }
 /* ---------------------- */
 
+/* Font styles */
+.fs-1 {
+	font-size: 1rem!important;
+}
+/* ----------------------- */
 
 /* General styles. */
 html, body {
@@ -200,6 +205,10 @@ So till this is unfixed bug, margin for bootsrap row will be set to zero at base
 	max-height: 50px;
 }
 
+.navbar-toggler:focus {
+	box-shadow: none;
+}
+
 /* -------------------------------- */
 
 /* Styles for close button in side menu. */
@@ -317,11 +326,11 @@ So till this is unfixed bug, margin for bootsrap row will be set to zero at base
 	}
 
 	.NavLink, .NavLink:focus, .NavLink:active {
-		color: white !important;
+		color: white;
 	}
 
 	.NavLink:hover {
-		color: #000000 !important;
+		color: #000000;
 	}
 
 	.NavLink {

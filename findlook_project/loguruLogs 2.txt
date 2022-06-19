@@ -1,0 +1,141 @@
+2022-06-09T17:04:53.834857+0300 ERROR (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+Traceback (most recent call last):
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/niki/pet_projects/findlook/findlook_project/main/views.py", line 168, in get
+    if data:
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 284, in __bool__
+    self._fetch_all()
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+2022-06-09T17:04:53.891241+0300 INFO {'error_code': 1, 'message': 'Неизвестная ошибка'}
+2022-06-09T17:06:37.200118+0300 ERROR (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+Traceback (most recent call last):
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/niki/pet_projects/findlook/findlook_project/main/views.py", line 168, in get
+    if data:
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 284, in __bool__
+    self._fetch_all()
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+2022-06-09T17:06:37.285414+0300 INFO {'error_code': 1, 'message': 'Неизвестная ошибка'}
+2022-06-09T17:13:45.646401+0300 ERROR (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+Traceback (most recent call last):
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/niki/pet_projects/findlook/findlook_project/main/views.py", line 168, in get
+    if data:
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 284, in __bool__
+    self._fetch_all()
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/niki/pet_projects/findlook/env/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'test_iwater_testing.iwater_category' doesn't exist")
+2022-06-09T17:13:45.754661+0300 INFO {'error_code': 1, 'message': 'Неизвестная ошибка'}

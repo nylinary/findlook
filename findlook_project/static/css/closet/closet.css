@@ -1,0 +1,18 @@
+.body-clothes {
+    height: 275px;
+    text-align: center;
+}
+
+.leg-clothes {
+    height: 325px;
+    text-align: center;
+}
+
+.buttons-top, .buttons-leg {
+    display: inline-block;
+}
+
+.SubmitButton {
+    width: 150px;
+    background-color: #ebeeef;
+}

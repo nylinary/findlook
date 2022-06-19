@@ -16,7 +16,7 @@
     <body>
         <div class="Wrapper">
         <!-- Header -->
-            <nav class="Navbar navbar">
+            <nav class="Navbar navbar navbar-expand-lg">
                 <div class="container-fluid justify-content-between">
                   <div class="bs-LogoDiv_Header" href="#">
                     <img class="bs-LogoImg" src="{% static 'images/logo.png' %}" alt="">
@@ -72,33 +72,6 @@
   <!-- Footer -->
         <footer class="Footer">
             <div class="FooterDiv container-fluid">
-                <div class="row justify-content-around flex-xs-column">
-                    <div class="ListDiv_Footer col-sm-6 col-md-4">
-                        <ul class="FooterUl p-0 m-0">
-                            <li><a class="FooterLink Link" href="{% url 'index' %}">- Главная</a></li>
-                            <li><a class="FooterLink Link" href="{% url 'closet:index' %}">- Образы</a></li>
-                            <li><a class="FooterLink Link" href="">- Аккаунт</a></li>
-                            <li><a class="FooterLink Link" href="{% url 'suggestion' %}">- Связь</a></li>
-                            <li><a class="FooterLink Link" href="">- Помощь</a></li>
-                            <li><a class="FooterLink Link" href="{% url 'main:register' %}">- Регистрация</a></li>
-                        </ul>
-                    </div>
-                    <div class="ListDiv_Footer col-sm-6 col-md-4">
-                        <ul class="FooterUl p-0 m-0">
-                            <li>
-                                <i><img class="bs-IconImg IconImg" src="{% static 'images/phone.png' %}" alt=""></i>
-                                <p class="bs-IconP IconP">+7-911-379-80-86</p>
-                            </li>
-                            <li>
-                                <i><img class="bs-IconImg IconImg" src="{% static 'images/mail.png' %}" alt=""></i>
-                                <p class="bs-IconP IconP">njt55cs@gmail.com</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bs-LogoDiv_Footer d-none d-sm-none d-md-none d-lg-block col-md-4">
-                        <img class="bs-LogoImg" src="{% static 'images/logo.png' %}" alt="">
-                    </div>
-                </div>
                 <div class="CopyrightDiv">
                     <p class="CopyrightP">Copyright 2022 All Rights Reserved Findlook</p>
                 </div>

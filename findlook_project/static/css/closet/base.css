@@ -1,0 +1,29 @@
+.Content {
+	font-size: 0.75rem;
+}
+/* ------------------------------ */
+
+/* Header styles */
+.Navbar {
+	height: 75px;
+}
+
+/* -------------------------------- */
+
+/* Logo styles. */
+.bs-LogoDiv_Header {
+	display: flex;
+	flex: 1;
+	height: fit-content;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0;
+}
+
+.bs-LogoImg{
+	max-height: 75px;
+}	
+
+.FooterDiv {
+	padding: 0;
+}

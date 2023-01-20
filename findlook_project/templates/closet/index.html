@@ -114,7 +114,7 @@
 </script>
 
 <div class="ClothesWrapper">
-    <div class="body-clothes">
+    <!-- <div class="body-clothes">
         <div class="buttons-top">
             <button id="bprev-top" class="SubmitButton" type="button">Previous</input>
         </div>
@@ -123,9 +123,14 @@
         <div class="buttons-top">
             <button id="bnext-top" class="SubmitButton" type="button">Next</input>
         </div>
-    </div>
+    </div>   -->
+    {% for item in image_names %}
+    <p>{{ item.image_name }}</p>
+    {% endfor %}
+</div>  
 
 
+<div class="ClothesWrapper">
     <div class="leg-clothes">
         <div class="buttons-leg">
             <button id="bprev-leg" class="SubmitButton" type="button">Previous</input>
